@@ -36,7 +36,7 @@ export const pillars: Pillar[] = [
           "Lifecycle marketing — customer journeys from first touch to retention",
           "AEO (Answer Engine Optimization) — appear in ChatGPT, Perplexity, Gemini",
           "Google Ads / PPC management and optimization",
-          "Organic social strategy — content that builds community and drives engagement",
+          "Organic social strategy — content that builds community",
           "CRO (Conversion Rate Optimization) — turning visitors into customers",
         ],
       },
