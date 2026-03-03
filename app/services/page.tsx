@@ -17,7 +17,7 @@ export default function ServicesPage() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <SectionEyebrow text="Services" />
-          <h1 className="font-display text-display-lg font-light text-text-primary mb-5">
+          <h1 className="font-display text-5xl md:text-display-lg font-light text-text-primary mb-5">
             Everything your brand
             <br />
             <em>needs to grow.</em>
@@ -34,9 +34,8 @@ export default function ServicesPage() {
         <section
           key={pillar.id}
           id={`pillar-${pillar.id}`}
-          className={`py-20 border-t border-sage/10 ${
-            i % 2 === 0 ? "bg-surface-1" : "bg-surface-2"
-          }`}
+          className={`py-20 border-t border-sage/10 ${i % 2 === 0 ? "bg-surface-1" : "bg-surface-2"
+            }`}
         >
           <div className="max-w-6xl mx-auto px-8">
             <motion.div

@@ -19,7 +19,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-8 pb-24">
         <SectionEyebrow text="About RUNOMA" />
-        <h1 className="font-display text-display-lg font-light text-text-primary mb-6">
+        <h1 className="font-display text-5xl md:text-display-lg font-light text-text-primary mb-6">
           Built in Lagos.
           <br />
           <em className="text-sage">Built for Africa.</em>
@@ -62,9 +62,9 @@ export default function AboutPage() {
             >
               {[
                 { stat: "₦1.4B", label: "Nigeria's projected AI market size" },
-                { stat: "83%",   label: "Lagos marketers using AI without guidance" },
-                { stat: "40M+",  label: "Nigerians on Instagram and TikTok" },
-                { stat: "0",     label: "Lagos agencies offering AEO or design systems" },
+                { stat: "83%", label: "Lagos marketers using AI without guidance" },
+                { stat: "40M+", label: "Nigerians on Instagram and TikTok" },
+                { stat: "0", label: "Lagos agencies offering AEO or design systems" },
               ].map((item) => (
                 <div key={item.stat} className="flex items-baseline gap-4 py-3 border-b border-sage/10 last:border-0">
                   <span className="font-mono text-2xl text-sage w-20 shrink-0">{item.stat}</span>
@@ -80,7 +80,7 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-8 text-center">
           <SectionEyebrow text="How We Think" />
-          <h2 className="font-display text-display-md font-light text-text-primary mb-8">
+          <h2 className="font-display text-3xl md:text-display-md font-light text-text-primary mb-8">
             <AnimatedText text="AI doesn't replace creativity." />
             <br />
             <AnimatedText text="It expands it." delay={0.3} />

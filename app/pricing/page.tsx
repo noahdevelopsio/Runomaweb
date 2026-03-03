@@ -21,7 +21,7 @@ export default function PricingPage() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <SectionEyebrow text="Pricing" />
-          <h1 className="font-display text-display-lg font-light text-text-primary mb-5">
+          <h1 className="font-display text-5xl md:text-display-lg font-light text-text-primary mb-5">
             Transparent pricing.
             <br />
             <em>No surprises.</em>

@@ -33,7 +33,7 @@ export default function ContactPage() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             <SectionEyebrow text="Contact" />
-            <h1 className="font-display text-display-sm font-light text-text-primary mb-5">
+            <h1 className="font-display text-5xl md:text-display-sm font-light text-text-primary mb-5">
               Let&apos;s talk about
               <br />
               <em className="text-sage">your brand.</em>
