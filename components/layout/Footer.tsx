@@ -5,17 +5,17 @@ const columns = [
     title: "Services",
     links: [
       { label: "Digital Marketing", href: "/services#pillar-1" },
-      { label: "Creative Design",   href: "/services#pillar-2" },
-      { label: "Production",        href: "/services#pillar-3" },
-      { label: "Tech Design",       href: "/services#pillar-4" },
-      { label: "AI Consulting",     href: "/services#pillar-5" },
-      { label: "Strategy",          href: "/services#pillar-6" },
+      { label: "Creative Design", href: "/services#pillar-2" },
+      { label: "Production", href: "/services#pillar-3" },
+      { label: "Tech Design", href: "/services#pillar-4" },
+      { label: "AI Consulting", href: "/services#pillar-5" },
+      { label: "Strategy", href: "/services#pillar-6" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About",   href: "/about"   },
+      { label: "About", href: "/about" },
       { label: "Pricing", href: "/pricing" },
       { label: "Contact", href: "/contact" },
     ],
@@ -24,9 +24,9 @@ const columns = [
     title: "Connect",
     links: [
       { label: "Instagram", href: "#" },
-      { label: "LinkedIn",  href: "#" },
+      { label: "LinkedIn", href: "#" },
       { label: "Twitter/X", href: "#" },
-      { label: "WhatsApp",  href: "#" },
+      { label: "WhatsApp", href: "#" },
     ],
   },
 ];
@@ -81,7 +81,7 @@ export default function Footer() {
         <div className="border-t border-sage/10 pt-6 flex flex-col md:flex-row
                         justify-between items-center gap-3">
           <p className="font-body text-xs text-text-muted">
-            © 2025 RUNOMA. Built with AI. Directed by humans.
+            © 2025 RUNOMA.
           </p>
           <p className="font-mono text-xs text-text-muted">Lagos, Nigeria</p>
         </div>
