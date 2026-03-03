@@ -14,15 +14,13 @@ export default function MagneticCursor() {
     const ringRef = useRef<HTMLDivElement>(null);
 
     const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([]);
-    let trailId = useRef(0);
+    const trailId = useRef(0);
 
     useEffect(() => {
         const move = (e: MouseEvent) => {
             dotX.set(e.clientX - 4);
             dotY.set(e.clientY - 4);
-            // @ts-ignore
             ringX.set(e.clientX - 20);
-            // @ts-ignore
             ringY.set(e.clientY - 20);
 
             const speed = Math.abs(e.movementX) + Math.abs(e.movementY);
@@ -50,7 +48,7 @@ export default function MagneticCursor() {
         return () => {
             window.removeEventListener("mousemove", move);
         };
-    }, []);
+    }, [dotX, dotY, ringX, ringY]);
 
     return (
         <>
