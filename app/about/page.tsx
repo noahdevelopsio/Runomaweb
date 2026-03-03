@@ -5,13 +5,6 @@ import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
 import AnimatedText from "@/components/ui/AnimatedText";
 
-const tools = [
-  "Midjourney", "Adobe Firefly", "ChatGPT", "Claude AI",
-  "Runway ML", "CapCut", "Make.com", "Framer",
-  "Webflow", "Figma", "GSAP", "Framer Motion",
-  "HubSpot", "Brand24", "Semrush", "GrackerAI",
-];
-
 export default function AboutPage() {
   return (
     <div className="bg-surface-1 pt-32">
@@ -92,32 +85,6 @@ export default function AboutPage() {
             <br /><br />
             The creative insight is human. The production velocity is AI.
           </p>
-        </div>
-      </section>
-
-      {/* Tools */}
-      <section className="bg-surface-2 py-24">
-        <div className="max-w-6xl mx-auto px-8">
-          <SectionEyebrow text="Our Toolstack" />
-          <h2 className="font-display text-3xl font-light text-text-primary mb-10">
-            The AI stack behind the studio.
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {tools.map((tool, i) => (
-              <motion.span
-                key={tool}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="font-mono text-xs tracking-wider px-4 py-2 rounded-full
-                           border border-sage/20 text-text-secondary hover:border-sage/50
-                           hover:text-text-primary transition-all duration-200"
-              >
-                {tool}
-              </motion.span>
-            ))}
-          </div>
         </div>
       </section>
 
