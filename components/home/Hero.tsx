@@ -4,6 +4,8 @@ import { Suspense } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Scene3D from "./Scene3D";
+import ScrambleText from "@/components/ui/ScrambleText";
+import GradientText from "@/components/ui/GradientText";
 
 export default function Hero() {
   const container = {
@@ -59,22 +61,11 @@ export default function Hero() {
             variants={item}
             className="font-display text-6xl md:text-8xl lg:text-display-xl font-light text-foreground mb-8 max-w-4xl leading-[0.95]"
           >
-            We build brands
+            <ScrambleText text="We build brands" delay={0.5} />
             <br />
-            <motion.em
-              className="text-primary inline-block"
-              animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-              style={{
-                backgroundImage: "linear-gradient(90deg, hsl(149 28% 59%), hsl(120 32% 80%), hsl(152 30% 47%), hsl(149 28% 59%))",
-                backgroundSize: "300% 100%",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              that move.
-            </motion.em>
+            <em className="text-primary inline-block">
+              <GradientText>that move.</GradientText>
+            </em>
           </motion.h1>
 
           <motion.p
