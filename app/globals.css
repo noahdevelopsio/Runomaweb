@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,29 +7,43 @@
 @layer base {
   :root {
     /* Surface / Background scale */
-    --background: 210 33% 7%;        /* #0F1923 */
-    --foreground: 210 33% 95%;       /* #F0F4F8 */
+    --background: 210 33% 7%;
+    /* #0F1923 */
+    --foreground: 210 33% 95%;
+    /* #F0F4F8 */
 
-    --surface-0: 210 33% 7%;         /* #0F1923 */
-    --surface-1: 213 30% 12%;        /* #141F2B */
-    --surface-2: 209 25% 17%;        /* #1C2B3A */
-    --surface-3: 210 23% 21%;        /* #243344 */
+    --surface-0: 210 33% 7%;
+    /* #0F1923 */
+    --surface-1: 213 30% 12%;
+    /* #141F2B */
+    --surface-2: 209 25% 17%;
+    /* #1C2B3A */
+    --surface-3: 210 23% 21%;
+    /* #243344 */
 
     /* Brand accent - sage green */
-    --primary: 149 28% 59%;          /* #7CB49A */
+    --primary: 149 28% 59%;
+    /* #7CB49A */
     --primary-foreground: 210 33% 7%;
-    --primary-dark: 152 30% 47%;     /* #4A9070 */
-    --primary-glow: 120 32% 80%;     /* #C8E6C0 */
+    --primary-dark: 152 30% 47%;
+    /* #4A9070 */
+    --primary-glow: 120 32% 80%;
+    /* #C8E6C0 */
 
     /* Steel mist */
-    --secondary: 207 30% 73%;        /* #A8C5DA */
+    --secondary: 207 30% 73%;
+    /* #A8C5DA */
     --secondary-foreground: 210 33% 7%;
 
     /* Text scale */
-    --text-primary: 210 33% 95%;     /* #F0F4F8 */
-    --text-secondary: 210 20% 63%;   /* #8DA4B8 */
-    --text-muted: 210 18% 39%;       /* #4F6478 */
-    --text-accent: 149 28% 59%;      /* #7CB49A */
+    --text-primary: 210 33% 95%;
+    /* #F0F4F8 */
+    --text-secondary: 210 20% 63%;
+    /* #8DA4B8 */
+    --text-muted: 210 18% 39%;
+    /* #4F6478 */
+    --text-accent: 149 28% 59%;
+    /* #7CB49A */
 
     /* Surfaces mapped to shadcn tokens */
     --card: 209 25% 17%;
@@ -58,14 +74,24 @@
 }
 
 /* Smooth scrollbar */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: hsl(var(--surface-0)); }
-::-webkit-scrollbar-thumb { background: hsl(var(--primary)); border-radius: 2px; }
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--surface-0));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 2px;
+}
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground font-body antialiased overflow-x-hidden;
   }
@@ -73,8 +99,13 @@
 
 /* Custom utilities */
 @layer utilities {
-  .text-balance { text-wrap: balance; }
-  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Story link underline animation */
@@ -82,11 +113,13 @@
   .story-link * {
     @apply relative inline-block;
   }
+
   .story-link *::after {
     content: '';
     @apply absolute w-full scale-x-0 h-0.5 bottom-0 left-0 origin-bottom-right transition-transform duration-300;
     background: hsl(var(--primary));
   }
+
   .story-link *:hover::after {
     @apply scale-x-100 origin-bottom-left;
   }
