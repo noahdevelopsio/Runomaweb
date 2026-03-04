@@ -1,0 +1,14 @@
+export default function Logo({ className = "w-8 h-auto" }: { className?: string }) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72" className={className}>
+            {/* Top Diamond (Sage) */}
+            <polygon points="50,5 70,25 50,45 30,25" fill="#7CB49A" />
+
+            {/* Bottom Left Diamond (Text Primary / White) */}
+            <polygon points="28,27 48,47 28,67 8,47" fill="#F0F4F8" />
+
+            {/* Bottom Right Diamond (Text Primary / White) */}
+            <polygon points="72,27 92,47 72,67 52,47" fill="#F0F4F8" />
+        </svg>
+    );
+}
