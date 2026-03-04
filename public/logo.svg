@@ -2,9 +2,9 @@
   <!-- Top Diamond (Sage) -->
   <polygon points="50,5 70,25 50,45 30,25" fill="#7CB49A" />
   
-  <!-- Bottom Left Diamond (Ink) -->
-  <polygon points="28,27 48,47 28,67 8,47" fill="#0F1923" />
+  <!-- Bottom Left Diamond (Text Primary / White) -->
+  <polygon points="28,27 48,47 28,67 8,47" fill="#F0F4F8" />
   
-  <!-- Bottom Right Diamond (Ink) -->
-  <polygon points="72,27 92,47 72,67 52,47" fill="#0F1923" />
+  <!-- Bottom Right Diamond (Text Primary / White) -->
+  <polygon points="72,27 92,47 72,67 52,47" fill="#F0F4F8" />
 </svg>
