@@ -25,9 +25,9 @@ function CountUp({ to, suffix = "" }: { to: number; suffix?: string }) {
 
 const stats = [
   { value: 32, suffix: "+", label: "Services Offered", icon: "◆" },
-  { value: 48, suffix: "hrs", label: "Average Delivery", icon: "⚡" },
-  { value: 83, suffix: "%", label: "Need AI Guidance", icon: "◎" },
-  { display: "₦20M+", label: "Year 1 Target", icon: "▲" },
+  { value: 48, suffix: "hrs", label: "Avg Delivery", icon: "⚡" },
+  { value: 83, suffix: "%", label: "of Lagos marketers need guidance", icon: "◎" },
+  { display: "₦20M+", label: "Year 1 Revenue Target", icon: "▲" },
 ];
 
 export default function StatsBar() {

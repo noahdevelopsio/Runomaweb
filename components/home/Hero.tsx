@@ -96,22 +96,21 @@ export default function Hero() {
             variants={item}
             className="flex flex-wrap gap-12 border-t border-primary/10 pt-8"
           >
-            {[
-              { value: "32", label: "Services" },
-              { value: "48hrs", label: "Avg. Delivery" },
-              { value: "6", label: "Pillars" },
-            ].map((s, i) => (
-              <motion.div
-                key={s.label}
-                className="flex items-baseline gap-2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 + i * 0.1, duration: 0.6 }}
-              >
-                <span className="font-mono text-3xl text-foreground">{s.value}</span>
-                <span className="font-body text-sm text-text-muted">{s.label}</span>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="flex items-center gap-3 px-4 py-2 rounded-full border border-primary/20 bg-primary/5"
+            >
+              <motion.span
+                animate={{ opacity: [1, 0.4, 1] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                className="w-2 h-2 rounded-full bg-primary"
+              />
+              <span className="font-mono text-xs tracking-wider text-text-secondary uppercase">
+                Currently accepting new clients
+              </span>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
