@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/ui/Logo";
 
 const columns = [
   {
@@ -38,11 +39,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-baseline gap-1 mb-3">
-              <span className="font-display text-2xl font-semibold tracking-widest text-text-primary">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-surface-2/80 backdrop-blur-md border border-primary/20 p-2 rounded-xl shadow-sm">
+                <Logo className="w-6 h-auto" />
+              </div>
+              <span className="font-display text-2xl font-semibold tracking-widest text-text-primary mt-1">
                 RUNOMA
               </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-sage mb-1" />
             </div>
             <p className="font-body text-sm text-text-secondary leading-relaxed mb-3">
               AI-Powered Creative Tech Studio

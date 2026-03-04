@@ -64,7 +64,7 @@ export default function Hero() {
             <ScrambleText text="We build brands" delay={0.5} />
             <br />
             <em className="text-primary inline-block">
-              <GradientText>that move.</GradientText>
+              <GradientText>That People Don’t Just See — They Experience</GradientText>
             </em>
           </motion.h1>
 
