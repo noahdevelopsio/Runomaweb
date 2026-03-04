@@ -81,7 +81,7 @@ export default function Footer() {
         <div className="border-t border-sage/10 pt-6 flex flex-col md:flex-row
                         justify-between items-center gap-3">
           <p className="font-body text-xs text-text-muted">
-            © 2025 RUNOMA.
+            © 2026 RUNOMA.
           </p>
           <p className="font-mono text-xs text-text-muted">Lagos, Nigeria</p>
         </div>

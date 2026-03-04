@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import GrainOverlay from "@/components/ui/GrainOverlay";
-import MagneticCursor from "@/components/ui/MagneticCursor";
 
 export const metadata: Metadata = {
   title: "RUNOMA — AI-Powered Creative Tech Studio | Lagos, Nigeria",
@@ -23,7 +22,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="bg-surface-1 text-text-primary font-body antialiased overflow-x-hidden">
         <GrainOverlay />
-        <MagneticCursor />
         <Navbar />
         <main>{children}</main>
         <Footer />
