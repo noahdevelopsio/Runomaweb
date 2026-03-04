@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
-import Image from "next/image";
 
 // Placeholder case studies - replace with real data
 const caseStudies = [
