@@ -16,7 +16,7 @@ export default function ScrambleText({
     text,
     className = "",
     delay = 0,
-    speed = 40,
+    speed = 25,
 }: ScrambleTextProps) {
     const [displayed, setDisplayed] = useState(text.replace(/./g, "·"));
     const ref = useRef<HTMLSpanElement>(null);
@@ -29,7 +29,7 @@ export default function ScrambleText({
 
         setTimeout(() => {
             let iteration = 0;
-            const totalFrames = text.length * 3;
+            const totalFrames = text.length * 2;
 
             const interval = setInterval(() => {
                 setDisplayed(
@@ -37,7 +37,7 @@ export default function ScrambleText({
                         .split("")
                         .map((char, i) => {
                             if (char === " ") return " ";
-                            if (i < Math.floor(iteration / 3)) return char;
+                            if (i < Math.floor(iteration / 2)) return char;
                             return CHARS[Math.floor(Math.random() * CHARS.length)];
                         })
                         .join("")
