@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import GrainOverlay from "@/components/ui/GrainOverlay";
 
 export const metadata: Metadata = {
   title: "RUNOMA — AI-Powered Creative Tech Studio | Lagos, Nigeria",
@@ -21,7 +20,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="bg-surface-1 text-text-primary font-body antialiased overflow-x-hidden">
-        <GrainOverlay />
         <Navbar />
         <main>{children}</main>
         <Footer />
