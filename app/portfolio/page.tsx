@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
 
@@ -12,7 +13,7 @@ const caseStudies = [
     client: "Tech Startup",
     category: "Branding",
     description: "Complete brand identity system and website for an emerging fintech platform.",
-    image: "/placeholder-1.jpg",
+    image: "/branding.jpg",
     tags: ["Brand Identity", "Web Design", "UI/UX"],
     results: ["300% increase in conversions", "2x user engagement"],
   },
@@ -73,14 +74,15 @@ export default function PortfolioPage() {
               className="group relative rounded-3xl overflow-hidden bg-gradient-card border border-sage/[0.08] 
                          hover:border-sage/20 transition-all duration-300 hover:shadow-card-hover"
             >
-              {/* Image placeholder */}
-              <div className="relative h-64 bg-surface-3 overflow-hidden">
+              {/* Image */}
+              <div className="relative h-80 overflow-hidden">
+                <Image
+                  src={study.image}
+                  alt={study.title}
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-mono text-xs text-text-muted tracking-widest">
-                    PROJECT IMAGE
-                  </span>
-                </div>
               </div>
 
               {/* Content */}
