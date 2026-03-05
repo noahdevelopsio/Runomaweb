@@ -4,40 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
-
-// Placeholder case studies - replace with real data
-const caseStudies = [
-  {
-    id: 1,
-    title: "Brand Identity & Web Design",
-    client: "Tech Startup",
-    category: "Branding",
-    description: "Complete brand identity system and website for an emerging fintech platform.",
-    image: "/branding.jpg",
-    tags: ["Brand Identity", "Web Design", "UI/UX"],
-    results: ["300% increase in conversions", "2x user engagement"],
-  },
-  {
-    id: 2,
-    title: "AI-Powered Marketing Campaign",
-    client: "E-commerce Brand",
-    category: "Marketing",
-    description: "Data-driven marketing campaign leveraging AI for personalization and optimization.",
-    image: "/placeholder-2.jpg",
-    tags: ["AI Marketing", "Content", "Analytics"],
-    results: ["150% ROI", "40% cost reduction"],
-  },
-  {
-    id: 3,
-    title: "Motion Graphics & Video Production",
-    client: "Creative Agency",
-    category: "Video",
-    description: "Brand video series with custom motion graphics and 3D elements.",
-    image: "/placeholder-3.jpg",
-    tags: ["Motion Design", "3D", "Video"],
-    results: ["1M+ views", "Featured on industry blogs"],
-  },
-];
+import { caseStudies } from "@/lib/data/portfolio";
 
 export default function PortfolioPage() {
   return (
@@ -129,9 +96,15 @@ export default function PortfolioPage() {
                   ))}
                 </div>
 
-                <Button variant="ghost" size="sm">
-                  View Case Study →
-                </Button>
+                {study.link ? (
+                  <Button href={study.link} variant="ghost" size="sm">
+                    Visit Website →
+                  </Button>
+                ) : (
+                  <Button variant="ghost" size="sm">
+                    View Case Study →
+                  </Button>
+                )}
               </div>
             </motion.article>
           ))}
