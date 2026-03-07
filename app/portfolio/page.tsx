@@ -1,42 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
-
-// Placeholder case studies - replace with real data
-const caseStudies = [
-  {
-    id: 1,
-    title: "Brand Identity & Web Design",
-    client: "Tech Startup",
-    category: "Branding",
-    description: "Complete brand identity system and website for an emerging fintech platform.",
-    image: "/placeholder-1.jpg",
-    tags: ["Brand Identity", "Web Design", "UI/UX"],
-    results: ["300% increase in conversions", "2x user engagement"],
-  },
-  {
-    id: 2,
-    title: "AI-Powered Marketing Campaign",
-    client: "E-commerce Brand",
-    category: "Marketing",
-    description: "Data-driven marketing campaign leveraging AI for personalization and optimization.",
-    image: "/placeholder-2.jpg",
-    tags: ["AI Marketing", "Content", "Analytics"],
-    results: ["150% ROI", "40% cost reduction"],
-  },
-  {
-    id: 3,
-    title: "Motion Graphics & Video Production",
-    client: "Creative Agency",
-    category: "Video",
-    description: "Brand video series with custom motion graphics and 3D elements.",
-    image: "/placeholder-3.jpg",
-    tags: ["Motion Design", "3D", "Video"],
-    results: ["1M+ views", "Featured on industry blogs"],
-  },
-];
+import { caseStudies } from "@/lib/data/portfolio";
 
 export default function PortfolioPage() {
   return (
@@ -73,14 +41,15 @@ export default function PortfolioPage() {
               className="group relative rounded-3xl overflow-hidden bg-gradient-card border border-sage/[0.08] 
                          hover:border-sage/20 transition-all duration-300 hover:shadow-card-hover"
             >
-              {/* Image placeholder */}
-              <div className="relative h-64 bg-surface-3 overflow-hidden">
+              {/* Image */}
+              <div className="relative h-80 overflow-hidden">
+                <Image
+                  src={study.image}
+                  alt={study.title}
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-mono text-xs text-text-muted tracking-widest">
-                    PROJECT IMAGE
-                  </span>
-                </div>
               </div>
 
               {/* Content */}
@@ -127,9 +96,15 @@ export default function PortfolioPage() {
                   ))}
                 </div>
 
-                <Button variant="ghost" size="sm">
-                  View Case Study →
-                </Button>
+                {study.link ? (
+                  <Button href={study.link} variant="ghost" size="sm">
+                    Visit Website →
+                  </Button>
+                ) : (
+                  <Button variant="ghost" size="sm">
+                    View Case Study →
+                  </Button>
+                )}
               </div>
             </motion.article>
           ))}

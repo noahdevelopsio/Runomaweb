@@ -48,7 +48,7 @@ export default function ContactPage() {
             <div className="space-y-5">
               {[
                 { num: "01", text: "We review your submission within 24 hours" },
-                { num: "02", text: "We'll send a WhatsApp message to confirm your session" },
+                { num: "02", text: "We'll contact you via mail to confirm your session" },
                 { num: "03", text: "45-minute video or phone call — your choice" },
                 { num: "04", text: "We send written findings afterward, whether you work with us or not" },
               ].map((step) => (
@@ -77,7 +77,7 @@ export default function ContactPage() {
                   You&apos;re booked in.
                 </h3>
                 <p className="font-body text-text-secondary text-sm">
-                  We&apos;ll be in touch within 24 hours via WhatsApp.
+                  We&apos;ll be in touch within 24 hours via mail.
                 </p>
               </div>
             ) : (
@@ -109,7 +109,7 @@ export default function ContactPage() {
 
                 <div>
                   <label className="font-mono text-xs text-sage tracking-wider block mb-2">
-                    WHATSAPP NUMBER *
+                    PHONE NUMBER *
                   </label>
                   <input required placeholder="+234 800 000 0000" className={inputClass} />
                 </div>
@@ -130,18 +130,18 @@ export default function ContactPage() {
                   </select>
                 </div>
 
-                <div>
-                  <label className="font-mono text-xs text-sage tracking-wider block mb-2">
-                    MONTHLY BUDGET
-                  </label>
-                  <select className={inputClass}>
-                    <option value="">Select range...</option>
-                    <option>Under ₦100K</option>
-                    <option>₦100K – ₦300K</option>
-                    <option>₦300K – ₦600K</option>
-                    <option>₦600K+</option>
-                  </select>
-                </div>
+                {/*<div>*/}
+                {/*  <label className="font-mono text-xs text-sage tracking-wider block mb-2">*/}
+                {/*    MONTHLY BUDGET*/}
+                {/*  </label>*/}
+                {/*  <select className={inputClass}>*/}
+                {/*    <option value="">Select range...</option>*/}
+                {/*    <option>Under ₦100K</option>*/}
+                {/*    <option>₦100K – ₦300K</option>*/}
+                {/*    <option>₦300K – ₦600K</option>*/}
+                {/*    <option>₦600K+</option>*/}
+                {/*  </select>*/}
+                {/*</div>*/}
 
                 <div>
                   <label className="font-mono text-xs text-sage tracking-wider block mb-2">
@@ -155,7 +155,7 @@ export default function ContactPage() {
                 </div>
 
                 <Button type="submit" size="lg" fullWidth>
-                  Book My Free Audit →
+                  Book Your Free Audit →
                 </Button>
               </form>
             )}
