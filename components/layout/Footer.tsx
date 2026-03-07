@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/ui/Logo";
+import { Instagram, Linkedin, Twitter, Music } from "lucide-react";
 
 const columns = [
   {
@@ -17,17 +18,17 @@ const columns = [
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Pricing", href: "/pricing" },
+      { label: "Portfolio", href: "/portfolio" },
       { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Connect",
     links: [
-      { label: "Instagram", href: "#" },
-      { label: "LinkedIn", href: "#" },
-      { label: "Twitter/X", href: "#" },
-      { label: "WhatsApp", href: "#" },
+      { label: "Instagram", href: "https://www.instagram.com/_runoma/", icon: Instagram },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/runoma/", icon: Linkedin },
+      { label: "Twitter/X", href: "https://x.com/_Runoma", icon: Twitter },
+      { label: "TikTok", href: "https://www.tiktok.com/@info_runoma", icon: Music },
     ],
   },
 ];
@@ -64,13 +65,16 @@ export default function Footer() {
                 {col.title}
               </h5>
               <ul className="space-y-3">
-                {col.links.map((link) => (
+                {col.links.map((link: any) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="font-body text-sm text-text-secondary
-                                 hover:text-text-primary transition-colors duration-200"
+                      className="font-body text-sm text-text-secondary flex items-center gap-2
+                                 hover:text-text-primary hover:text-sage transition-colors duration-200 group"
                     >
+                      {link.icon && (
+                        <link.icon className="w-4 h-4 text-text-muted group-hover:text-sage transition-colors" />
+                      )}
                       {link.label}
                     </Link>
                   </li>
