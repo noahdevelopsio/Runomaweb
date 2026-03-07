@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/ui/Logo";
-import { Instagram, Linkedin, Twitter, MessageCircle } from "lucide-react";
+import { Instagram, Linkedin, Twitter, Music } from "lucide-react";
 
 const columns = [
   {
@@ -18,17 +18,17 @@ const columns = [
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Pricing", href: "/pricing" },
+      { label: "Portfolio", href: "/portfolio" },
       { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Connect",
     links: [
-      { label: "Instagram", href: "#", icon: Instagram },
-      { label: "LinkedIn", href: "#", icon: Linkedin },
-      { label: "Twitter/X", href: "#", icon: Twitter },
-      { label: "WhatsApp", href: "#", icon: MessageCircle },
+      { label: "Instagram", href: "https://www.instagram.com/_runoma/", icon: Instagram },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/runoma/", icon: Linkedin },
+      { label: "Twitter/X", href: "https://x.com/_Runoma", icon: Twitter },
+      { label: "TikTok", href: "https://www.tiktok.com/@info_runoma", icon: Music },
     ],
   },
 ];
