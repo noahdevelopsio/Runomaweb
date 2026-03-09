@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
@@ -13,7 +13,7 @@ const inputClass = `
   transition-all duration-200
 `;
 
-export default function ContactPage() {
+function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const searchParams = useSearchParams();
   const tier = searchParams.get("tier");
@@ -180,5 +180,19 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={
+      <div className="bg-surface-1 pt-32 min-h-screen">
+        <div className="max-w-6xl mx-auto px-8 pb-24">
+          <div className="text-center">Loading...</div>
+        </div>
+      </div>
+    }>
+      <ContactForm />
+    </Suspense>
   );
 }
