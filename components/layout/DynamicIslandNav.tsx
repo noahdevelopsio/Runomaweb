@@ -40,7 +40,11 @@ export default function DynamicIslandNav() {
                 layout
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                transition={
+                    expanded
+                        ? { type: "spring", stiffness: 400, damping: 25 }
+                        : { duration: 0.15, ease: "circIn" }
+                }
                 className={`bg-surface-2/90 backdrop-blur-xl border border-sage/20 shadow-card 
                    overflow-hidden flex flex-col items-center justify-center
                    ${expanded ? "rounded-[32px] w-[340px] p-6" : "rounded-full w-auto p-2 px-4"}`}
@@ -53,7 +57,7 @@ export default function DynamicIslandNav() {
                             key="collapsed"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
+                            exit={{ opacity: 0, filter: "blur(4px)" }}
                             transition={{ duration: 0.15 }}
                             className="flex items-center gap-4"
                         >
@@ -79,8 +83,8 @@ export default function DynamicIslandNav() {
                             key="expanded"
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
-                            transition={{ duration: 0.15 }}
+                            exit={{ opacity: 0, filter: "blur(4px)" }}
+                            transition={{ duration: 0.1 }}
                             className="w-full flex flex-col"
                         >
                             <div className="flex justify-between items-center mb-6 w-full">
