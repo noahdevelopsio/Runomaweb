@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Logo from "@/components/ui/Logo";
-import { Menu, X, Home, Search, Mail, User } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const links = [
     { label: "Home", href: "/" },
@@ -17,12 +17,10 @@ const links = [
 
 export default function DynamicIslandNav() {
     const [expanded, setExpanded] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
         const onScroll = () => {
-            setScrolled(window.scrollY > 60);
             if (window.scrollY > 60 && expanded) {
                 setExpanded(false); // Auto-collapse on scroll
             }
