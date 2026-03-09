@@ -9,8 +9,8 @@ import Logo from "@/components/ui/Logo";
 import { Menu, X } from "lucide-react";
 
 const links = [
-    { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "About", href: "/about" },
 ];
