@@ -112,7 +112,7 @@ function TierCard({ tier, index }: { tier: typeof tiers[0]; index: number }) {
                 variant={tier.featured ? "primary" : "ghost"}
                 fullWidth
             >
-                {tier.name === "Enterprise" ? "Let&apos;s Talk →" : "Book a Free Audit →"}
+                {tier.name === "Enterprise" ? "Book a Free Audit →" : "Book a Free Audit →"}
             </Button>
         </motion.div>
     );
