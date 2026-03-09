@@ -108,7 +108,7 @@ function TierCard({ tier, index }: { tier: typeof tiers[0]; index: number }) {
 
             {/* CTA */}
             <Button
-                href="/contact"
+                href={`/contact?tier=${encodeURIComponent(tier.name)}`}
                 variant={tier.featured ? "primary" : "ghost"}
                 fullWidth
             >

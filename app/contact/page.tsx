@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
@@ -14,6 +15,8 @@ const inputClass = `
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const searchParams = useSearchParams();
+  const tier = searchParams.get("tier");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -129,6 +132,20 @@ export default function ContactPage() {
                     <option>Not sure yet</option>
                   </select>
                 </div>
+
+                {tier && (
+                  <div>
+                    <label className="font-mono text-xs text-sage tracking-wider block mb-2">
+                      PRICING TIER
+                    </label>
+                    <input
+                      type="text"
+                      value={tier}
+                      disabled
+                      className={`${inputClass} opacity-75 cursor-not-allowed`}
+                    />
+                  </div>
+                )}
 
                 {/*<div>*/}
                 {/*  <label className="font-mono text-xs text-sage tracking-wider block mb-2">*/}
