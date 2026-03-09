@@ -9,6 +9,7 @@ import Logo from "@/components/ui/Logo";
 
 const links = [
   { label: "Services", href: "/services" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
 ];
@@ -30,7 +31,7 @@ export default function Navbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${scrolled
+        className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${scrolled
           ? "bg-ink/85 backdrop-blur-xl border-b border-sage/10 py-3"
           : "bg-transparent py-5"
           }`}

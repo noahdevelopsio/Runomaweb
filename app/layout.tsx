@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import DynamicIslandNav from "@/components/layout/DynamicIslandNav";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="bg-surface-1 text-text-primary font-body antialiased overflow-x-hidden">
         <Navbar />
+        <DynamicIslandNav />
         <main>{children}</main>
         <Footer />
       </body>

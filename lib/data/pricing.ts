@@ -1,114 +1,120 @@
 export type Tier = {
   name: string;
-  price: string;
-  description: string;
-  features: string[];
+  badge?: string;       // e.g. "Most Popular"
+  forWho: string;       // "For solo creators and small businesses"
+  tagline: string;      // One punchy line
+  features: string[];   // What's included
   featured?: boolean;
 };
 
-export type PricingRow = {
-  service: string;
-  price: string;
-  model: string;
+export type FaqItem = {
+  q: string;
+  a: string;
 };
 
 export const tiers: Tier[] = [
   {
     name: "Starter",
-    price: "₦100K/mo",
-    description: "For solo creators and small businesses starting online",
+    forWho: "Solo creators and small businesses",
+    tagline: "Get your brand online and performing.",
     features: [
-      "AI ad automation",
-      "Social media creative",
-      "Monthly performance report",
+      "AI-powered ad creative for Meta & TikTok",
+      "Monthly social media content package",
+      "Basic performance report",
       "Email support",
+      "1 active project at a time",
     ],
   },
   {
     name: "Growth",
-    price: "₦250K/mo",
-    description: "For SMBs and e-commerce brands scaling up",
+    forWho: "SMBs and e-commerce brands scaling up",
+    tagline: "More output. More channels. More results.",
     features: [
       "Everything in Starter",
       "Social media management",
-      "Video / motion content",
+      "Video and motion content",
       "1 brand refresh per month",
+      "2 active projects at a time",
+      "Monthly strategy check-in",
     ],
   },
   {
     name: "Scale",
-    price: "₦500K/mo",
-    description: "For startups and entertainment labels",
+    forWho: "Startups and entertainment labels",
+    tagline: "Full creative stack. Built for velocity.",
     features: [
-      "Full creative stack",
-      "Ads, content, video, web support",
+      "Full creative service access",
+      "Ads, content, video, and web support",
       "Monthly strategy sessions",
       "5-day turnaround SLA",
+      "4 active projects at a time",
+      "Dedicated account manager",
     ],
     featured: true,
+    badge: "Most Popular",
   },
   {
     name: "Studio",
-    price: "₦800K/mo",
-    description: "For scaling brands with high output needs",
+    forWho: "Scaling brands with high creative output needs",
+    tagline: "Unlimited requests. Dedicated bandwidth.",
     features: [
       "All services on-demand",
       "Unlimited creative requests",
       "Creative bandwidth model",
       "Dedicated account manager",
+      "Priority turnaround",
+      "Quarterly growth reviews",
     ],
   },
   {
     name: "Enterprise",
-    price: "Custom",
-    description: "For corporates and large brands",
+    forWho: "Corporates and large organizations",
+    tagline: "A fully embedded creative department.",
     features: [
       "Dedicated Creative Director",
       "Full team assignment",
-      "Custom SLA & dashboards",
-      "Priority turnaround",
+      "Custom SLA and dashboards",
+      "Priority turnaround on all work",
+      "Custom AI workflow builds",
+      "Executive strategy sessions",
     ],
   },
 ];
 
-export const projectPricing: Record<string, PricingRow[]> = {
-  "Creative Design": [
-    { service: "Logo + Full Brand Identity",      price: "₦150K – ₦450K",      model: "Project" },
-    { service: "Presentation / Pitch Deck",       price: "₦80K – ₦250K",       model: "Project" },
-    { service: "eBook / Report / Whitepaper",     price: "₦100K – ₦350K",      model: "Project" },
-    { service: "Illustration Design (custom)",    price: "₦80K – ₦200K/set",   model: "Project" },
-    { service: "Print Design",                    price: "₦30K – ₦150K",       model: "Project" },
-    { service: "Packaging & Merchandise",         price: "₦150K – ₦500K",      model: "Project" },
-    { service: "Concept Creation",                price: "₦100K – ₦300K",      model: "Project" },
-    { service: "HTML Email Template",             price: "₦50K – ₦150K",       model: "Project" },
-    { service: "Copywriting",                     price: "₦50K – ₦200K",       model: "Project" },
-  ],
-  "Production": [
-    { service: "Video Production (brand / ad)",   price: "₦150K – ₦700K",      model: "Project" },
-    { service: "Motion Design",                   price: "₦80K – ₦300K/asset", model: "Project" },
-    { service: "Reels / Short-form Video",        price: "₦50K – ₦150K/video", model: "Project" },
-    { service: "3D Product Render",               price: "₦80K – ₦300K/render",model: "Project" },
-    { service: "AR Filter / Immersive",           price: "₦200K – ₦800K",      model: "Project" },
-    { service: "Event Branding & Stage Visuals",  price: "₦200K – ₦600K",      model: "Project" },
-  ],
-  "Tech Design": [
-    { service: "Website (Standard)",              price: "₦300K – ₦600K",      model: "Project" },
-    { service: "Website (Custom / Premium)",      price: "₦600K – ₦1.5M",      model: "Project" },
-    { service: "Mobile App UI/UX",                price: "₦400K – ₦1.2M",      model: "Project" },
-    { service: "E-commerce Store",                price: "₦300K – ₦800K",      model: "Project" },
-    { service: "Landing Page",                    price: "₦80K – ₦250K",       model: "Project" },
-    { service: "Design System",                   price: "₦500K – ₦2M",        model: "Project" },
-    { service: "Website Maintenance",             price: "₦50K – ₦150K/mo",    model: "Retainer" },
-  ],
-  "Marketing & AI": [
-    { service: "AI Ad Automation",                price: "₦50K/mo + 15% spend", model: "Retainer" },
-    { service: "Social Media Management",         price: "₦80K – ₦250K/mo",    model: "Retainer" },
-    { service: "SEO Retainer",                    price: "₦100K – ₦350K/mo",   model: "Retainer" },
-    { service: "AEO Optimization",               price: "₦150K – ₦400K/mo",   model: "Retainer" },
-    { service: "Email & SMS Automation",          price: "₦80K – ₦200K/mo",    model: "Retainer" },
-    { service: "AI Chatbot Setup",               price: "₦100K + ₦30K/mo",    model: "Setup + Retainer" },
-    { service: "AI Consulting",                   price: "₦200K – ₦1M",        model: "Project" },
-    { service: "AI Training Workshop",            price: "₦15K – ₦30K/person", model: "Event" },
-    { service: "Fractional CMO",                  price: "₦150K – ₦500K/mo",   model: "Retainer" },
-  ],
-};
+export const includedInAll: string[] = [
+  "Access to all 32 RUNOMA services",
+  "AI-enhanced production on every deliverable",
+  "Dedicated creative project manager",
+  "Turnaround starting at 48 hours",
+  "Multi-platform asset formats included",
+  "Unlimited revisions within scope",
+  "Monthly performance reporting",
+  "Support across all 6 service pillars",
+];
+
+export const faqs: FaqItem[] = [
+  {
+    q: "How do I know which tier is right for me?",
+    a: "Book a free 45-minute audit and we'll recommend the right tier based on your brand's goals, current output, and growth stage. No commitment required — just clarity.",
+  },
+  {
+    q: "Can I start with a one-off project before subscribing?",
+    a: "Absolutely. Many of our best clients started with a single project — a logo, a website, a video. Once they saw the quality and speed, they moved to a subscription. There's no pressure either way.",
+  },
+  {
+    q: "What does the free audit actually include?",
+    a: "A 45-minute session where we review your brand's current marketing, identify what's working and what isn't, and tell you exactly what RUNOMA would do differently. You get written findings afterward whether you work with us or not.",
+  },
+  {
+    q: "Can I cancel my subscription?",
+    a: "Subscriptions run monthly. You can cancel or pause at any time with 30 days notice. We don't lock you into long contracts — we'd rather keep you because the work is great.",
+  },
+  {
+    q: "How fast is the turnaround?",
+    a: "Most deliverables are returned within 48–72 hours. Scale and Studio plans include a 5-day SLA for complex multi-format projects. Rush delivery is available on request.",
+  },
+  {
+    q: "What happens to unused capacity in a month?",
+    a: "Unused creative capacity rolls over for up to 30 days. We don't want you to lose value — if a busy month means you couldn't use your full subscription, we carry it forward.",
+  },
+];
