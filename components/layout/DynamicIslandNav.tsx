@@ -36,14 +36,14 @@ export default function DynamicIslandNav() {
 
     return (
         <div className="md:hidden fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex justify-center">
-            <motion.nav
+            <motion.div
                 layout
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={
                     expanded
                         ? { type: "spring", stiffness: 400, damping: 25 }
-                        : { duration: 0.15, ease: "circIn" }
+                        : { duration: 0 }
                 }
                 className={`bg-surface-2/90 backdrop-blur-xl border border-sage/20 shadow-card 
                    overflow-hidden flex flex-col items-center justify-center
@@ -56,9 +56,8 @@ export default function DynamicIslandNav() {
                             layout="position"
                             key="collapsed"
                             initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0, filter: "blur(4px)" }}
-                            transition={{ duration: 0.15 }}
+                            animate={{ opacity: 1, transition: { duration: 0 } }}
+                            exit={{ opacity: 0, filter: "blur(4px)", transition: { duration: 0.15 } }}
                             className="flex items-center gap-4"
                         >
                             <Link href="/">
@@ -82,9 +81,8 @@ export default function DynamicIslandNav() {
                             layout="position"
                             key="expanded"
                             initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, filter: "blur(4px)" }}
-                            transition={{ duration: 0.1 }}
+                            animate={{ opacity: 1, scale: 1, transition: { duration: 0.1 } }}
+                            exit={{ opacity: 0, transition: { duration: 0 } }}
                             className="w-full flex flex-col"
                         >
                             <div className="flex justify-between items-center mb-6 w-full">
@@ -131,7 +129,7 @@ export default function DynamicIslandNav() {
                         </motion.div>
                     )}
                 </AnimatePresence>
-            </motion.nav>
+            </motion.div>
         </div>
     );
 }
