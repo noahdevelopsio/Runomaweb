@@ -11,6 +11,7 @@ export interface CaseStudy {
   link?: string;
   challenge?: string;
   approach?: string;
+  gallery?: string[];
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -35,7 +36,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 2,
-    slug: "Branding Identity & Visual Design",
+    slug: "brand-identity-visual-design",
     title: "Branding Identity & Visual Design",
     client: "One Titanium",
     category: "Branding & Marketing",
@@ -43,6 +44,12 @@ export const caseStudies: CaseStudy[] = [
     image: "/portfolio/one-titanium-hero.jpeg",
     tags: ["Logo design", "Visual Design", "Brand Strategy"],
     results: ["150% ROI", "+25% Visibility", "40% cost reduction"],
+    gallery: [
+      "/portfolio/one-titanium-gallery-1.jpeg",
+      "/portfolio/one-titanium-gallery-2.jpeg",
+      "/portfolio/one-titanium-gallery-3.jpeg",
+      "/portfolio/one-titanium-gallery-4.jpeg",
+    ],
   },
   {
     id: 3,
