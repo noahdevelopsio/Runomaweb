@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
+import { sendContactEmail } from "@/app/actions/zeptomail";
 
 const inputClass = `
   w-full bg-surface-2 border border-sage/15 rounded-xl px-4 py-3
@@ -15,13 +16,39 @@ const inputClass = `
 
 function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   const searchParams = useSearchParams();
   const tier = searchParams.get("tier");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: Wire up to Resend/Formspree
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      business: formData.get("business") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      service: formData.get("service") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const result = await sendContactEmail(data);
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setError(result.error || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setError("Failed to send message. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -88,18 +115,23 @@ function ContactForm() {
                 onSubmit={handleSubmit}
                 className="bg-gradient-card rounded-3xl p-8 border border-sage/10 space-y-5"
               >
+                {error && (
+                  <div className="bg-red-500/10 border border-red-500/20 text-red-500 text-xs p-3 rounded-xl mb-4">
+                    {error}
+                  </div>
+                )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="font-mono text-xs text-sage tracking-wider block mb-2">
                       YOUR NAME *
                     </label>
-                    <input required placeholder="John Doe" className={inputClass} />
+                    <input name="name" required placeholder="John Doe" className={inputClass} />
                   </div>
                   <div>
                     <label className="font-mono text-xs text-sage tracking-wider block mb-2">
                       BUSINESS NAME *
                     </label>
-                    <input required placeholder="Brand Co." className={inputClass} />
+                    <input name="business" required placeholder="Brand Co." className={inputClass} />
                   </div>
                 </div>
 
@@ -107,21 +139,21 @@ function ContactForm() {
                   <label className="font-mono text-xs text-sage tracking-wider block mb-2">
                     EMAIL *
                   </label>
-                  <input type="email" required placeholder="you@email.com" className={inputClass} />
+                  <input name="email" type="email" required placeholder="you@email.com" className={inputClass} />
                 </div>
 
                 <div>
                   <label className="font-mono text-xs text-sage tracking-wider block mb-2">
                     PHONE NUMBER *
                   </label>
-                  <input required placeholder="+234 800 000 0000" className={inputClass} />
+                  <input name="phone" required placeholder="+234 800 000 0000" className={inputClass} />
                 </div>
 
                 <div>
                   <label className="font-mono text-xs text-sage tracking-wider block mb-2">
                     SERVICE INTEREST
                   </label>
-                  <select className={inputClass}>
+                  <select name="service" className={inputClass}>
                     <option value="">Select a pillar...</option>
                     <option>Digital Marketing & AI Automation</option>
                     <option>Creative Design</option>
@@ -139,40 +171,29 @@ function ContactForm() {
                       PRICING TIER
                     </label>
                     <input
+                      name="pricing_tier"
                       type="text"
                       value={tier}
-                      disabled
+                      readOnly
                       className={`${inputClass} opacity-75 cursor-not-allowed`}
                     />
                   </div>
                 )}
-
-                {/*<div>*/}
-                {/*  <label className="font-mono text-xs text-sage tracking-wider block mb-2">*/}
-                {/*    MONTHLY BUDGET*/}
-                {/*  </label>*/}
-                {/*  <select className={inputClass}>*/}
-                {/*    <option value="">Select range...</option>*/}
-                {/*    <option>Under ₦100K</option>*/}
-                {/*    <option>₦100K – ₦300K</option>*/}
-                {/*    <option>₦300K – ₦600K</option>*/}
-                {/*    <option>₦600K+</option>*/}
-                {/*  </select>*/}
-                {/*</div>*/}
 
                 <div>
                   <label className="font-mono text-xs text-sage tracking-wider block mb-2">
                     TELL US ABOUT YOUR BRAND
                   </label>
                   <textarea
+                    name="message"
                     rows={4}
                     placeholder="What you do, who your audience is, what you're trying to achieve..."
                     className={`${inputClass} resize-none`}
                   />
                 </div>
 
-                <Button type="submit" size="lg" fullWidth>
-                  Book Your Free Audit →
+                <Button type="submit" size="lg" fullWidth disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Book Your Free Audit →"}
                 </Button>
               </form>
             )}

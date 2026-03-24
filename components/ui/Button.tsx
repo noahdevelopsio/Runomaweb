@@ -9,16 +9,19 @@ interface ButtonProps {
   className?: string;
   fullWidth?: boolean;
   type?: "submit" | "button";
+  disabled?: boolean;
 }
 
 export default function Button({
   href, onClick, children, variant = "primary",
   size = "md", className = "", fullWidth = false, type,
+  disabled = false,
 }: ButtonProps) {
   const base = `
     inline-flex items-center justify-center gap-2 rounded-full font-body font-semibold
-    transition-all duration-200 cursor-pointer relative overflow-hidden
+    transition-all duration-200 relative overflow-hidden
     ${fullWidth ? "w-full" : ""}
+    ${disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : "cursor-pointer"}
   `;
 
   const sizes = {
@@ -47,6 +50,6 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>{children}</button>
+    <button type={type} onClick={onClick} className={classes} disabled={disabled}>{children}</button>
   );
 }
