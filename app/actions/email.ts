@@ -7,7 +7,14 @@ export async function sendContactEmail(formData: {
   phone: string;
   service: string;
   message: string;
+  site_url?: string;
 }) {
+  // Honeypot check: If a bot fills out the hidden "site_url" field, reject silently
+  if (formData.site_url) {
+    console.log("Honeypot triggered. Ignoring submission.");
+    return { success: true }; // Pretend it worked
+  }
+
   const apiKey = process.env.RESEND_API_KEY;
   const senderEmail = process.env.RESEND_SENDER_EMAIL;
   const recipientEmail = process.env.RESEND_RECIPIENT_EMAIL || senderEmail;

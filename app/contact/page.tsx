@@ -35,6 +35,7 @@ function ContactForm() {
       phone: formData.get("phone") as string,
       service: formData.get("service") as string,
       message: formData.get("message") as string,
+      site_url: formData.get("site_url") as string,
     };
 
     try {
@@ -45,6 +46,7 @@ function ContactForm() {
         setError(result.error || "Something went wrong. Please try again.");
       }
     } catch (err) {
+      console.error(err);
       setError("Failed to send message. Please check your connection.");
     } finally {
       setIsSubmitting(false);
@@ -115,6 +117,15 @@ function ContactForm() {
                 onSubmit={handleSubmit}
                 className="bg-gradient-card rounded-3xl p-8 border border-sage/10 space-y-5"
               >
+                {/* Honeypot Field */}
+                <input
+                  type="text"
+                  name="site_url"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+
                 {error && (
                   <div className="bg-red-500/10 border border-red-500/20 text-red-500 text-xs p-3 rounded-xl mb-4">
                     {error}
