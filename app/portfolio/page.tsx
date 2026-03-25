@@ -101,7 +101,7 @@ export default function PortfolioPage() {
                     Visit Website →
                   </Button>
                 ) : (
-                  <Button variant="ghost" size="sm">
+                  <Button href={`/portfolio/${study.slug}`} variant="ghost" size="sm">
                     View Case Study →
                   </Button>
                 )}
