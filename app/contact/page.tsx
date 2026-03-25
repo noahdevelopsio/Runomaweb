@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
-import { sendContactEmail } from "@/app/actions/zeptomail";
+import { sendContactEmail } from "@/app/actions/email";
 
 const inputClass = `
   w-full bg-surface-2 border border-sage/15 rounded-xl px-4 py-3
