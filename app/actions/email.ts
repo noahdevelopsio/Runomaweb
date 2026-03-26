@@ -7,39 +7,31 @@ export async function sendContactEmail(formData: {
   phone: string;
   service: string;
   message: string;
+  site_url?: string;
 }) {
-  const apiKey = process.env.ZEPTOMAIL_API_KEY;
-  const senderEmail = process.env.ZEPTOMAIL_SENDER_EMAIL;
-  const recipientEmail = process.env.ZEPTOMAIL_RECIPIENT_EMAIL || senderEmail;
+  // Honeypot check: If a bot fills out the hidden "site_url" field, reject silently
+  if (formData.site_url) {
+    console.log("Honeypot triggered. Ignoring submission.");
+    return { success: true }; // Pretend it worked
+  }
+
+  const apiKey = process.env.RESEND_API_KEY;
+  const senderEmail = process.env.RESEND_SENDER_EMAIL;
+  const recipientEmail = process.env.RESEND_RECIPIENT_EMAIL || senderEmail;
 
   if (!apiKey || !senderEmail) {
-    console.error("ZeptoMail configuration missing");
+    console.error("Resend configuration missing");
     return { success: false, error: "Configuration Error" };
   }
 
-  const endpoint = "https://api.zeptomail.com/v1.1/email";
+  const endpoint = "https://api.resend.com/emails";
 
   const emailBody = {
-    from: {
-      address: senderEmail,
-      name: "RUNOMA Contact Form"
-    },
-    to: [
-      {
-        email_address: {
-          address: recipientEmail,
-          name: "RUNOMA Admin"
-        }
-      }
-    ],
-    reply_to: [
-      {
-        address: formData.email,
-        name: formData.name
-      }
-    ],
+    from: `RUNOMA Contact Form <${senderEmail}>`,
+    to: [recipientEmail],
     subject: `New Lead: ${formData.business} - ${formData.service}`,
-    htmlbody: `
+    reply_to: formData.email,
+    html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
         <h2 style="color: #4a5d4e; border-bottom: 2px solid #f0f4f1; padding-bottom: 10px;">New Audit Request</h2>
         <p><strong>Name:</strong> ${formData.name}</p>
@@ -61,9 +53,8 @@ export async function sendContactEmail(formData: {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Authorization": apiKey
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(emailBody)
     });
@@ -73,7 +64,7 @@ export async function sendContactEmail(formData: {
     if (response.ok) {
       return { success: true, data };
     } else {
-      console.error("ZeptoMail API Error:", data);
+      console.error("Resend API Error:", data);
       return { success: false, error: data.message || "Failed to send email" };
     }
   } catch (error) {

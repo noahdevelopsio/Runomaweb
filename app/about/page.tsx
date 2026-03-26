@@ -19,7 +19,7 @@ export default function AboutPage() {
         </h1>
         <p className="font-body text-lg text-text-secondary max-w-xl leading-relaxed">
           RUNOMA was born from a simple observation: Nigerian businesses deserve
-          world-class creative — without world-class prices or wait times.
+          world-class creative without world-class prices or wait times.
           AI makes that possible. We built the studio to prove it.
         </p>
       </section>
@@ -80,7 +80,7 @@ export default function AboutPage() {
           </h2>
           <p className="font-body text-text-secondary text-lg leading-relaxed">
             Every RUNOMA deliverable begins with human thinking: What does this brand stand for?
-            Who is the audience? What emotion should this trigger? Then AI amplifies the execution —
+            Who is the audience? What emotion should this trigger? Then AI amplifies the execution.
             generating options at speed, testing variants, and optimizing in real time.
             <br /><br />
             The creative insight is human. The production velocity is AI.

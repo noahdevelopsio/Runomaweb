@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
-import { sendContactEmail } from "@/app/actions/zeptomail";
+import { sendContactEmail } from "@/app/actions/email";
 
 const inputClass = `
   w-full bg-surface-2 border border-sage/15 rounded-xl px-4 py-3
@@ -35,6 +35,7 @@ function ContactForm() {
       phone: formData.get("phone") as string,
       service: formData.get("service") as string,
       message: formData.get("message") as string,
+      site_url: formData.get("site_url") as string,
     };
 
     try {
@@ -45,6 +46,7 @@ function ContactForm() {
         setError(result.error || "Something went wrong. Please try again.");
       }
     } catch (err) {
+      console.error(err);
       setError("Failed to send message. Please check your connection.");
     } finally {
       setIsSubmitting(false);
@@ -79,7 +81,7 @@ function ContactForm() {
               {[
                 { num: "01", text: "We review your submission within 24 hours" },
                 { num: "02", text: "We'll contact you via mail to confirm your session" },
-                { num: "03", text: "45-minute video or phone call — your choice" },
+                { num: "03", text: "45-minute video or phone call (your choice)" },
                 { num: "04", text: "We send written findings afterward, whether you work with us or not" },
               ].map((step) => (
                 <div key={step.num} className="flex items-start gap-4">
@@ -115,6 +117,15 @@ function ContactForm() {
                 onSubmit={handleSubmit}
                 className="bg-gradient-card rounded-3xl p-8 border border-sage/10 space-y-5"
               >
+                {/* Honeypot Field */}
+                <input
+                  type="text"
+                  name="site_url"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+
                 {error && (
                   <div className="bg-red-500/10 border border-red-500/20 text-red-500 text-xs p-3 rounded-xl mb-4">
                     {error}
