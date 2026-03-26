@@ -81,7 +81,7 @@ function ContactForm() {
               {[
                 { num: "01", text: "We review your submission within 24 hours" },
                 { num: "02", text: "We'll contact you via mail to confirm your session" },
-                { num: "03", text: "45-minute video or phone call — your choice" },
+                { num: "03", text: "45-minute video or phone call (your choice)" },
                 { num: "04", text: "We send written findings afterward, whether you work with us or not" },
               ].map((step) => (
                 <div key={step.num} className="flex items-start gap-4">
