@@ -59,9 +59,6 @@ export default function ServicesPage() {
                 <p className="font-body text-sm text-text-secondary leading-relaxed mb-6">
                   {pillar.description}
                 </p>
-                <div className="font-mono text-sm text-sage">
-                  Starting from {pillar.startingFrom}
-                </div>
               </div>
 
               {/* Right: Services */}
