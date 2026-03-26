@@ -37,7 +37,7 @@ export default function PillarsGrid() {
             transition={{ delay: 0.1, duration: 0.7 }}
             className="font-body text-text-secondary text-lg max-w-md"
           >
-            From a single social post to a full brand identity — RUNOMA covers
+            From a single social post to a full brand identity, RUNOMA covers
             the entire creative and marketing stack.
           </motion.p>
         </div>

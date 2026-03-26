@@ -138,8 +138,8 @@ export default function PricingPage() {
                         <em><GradientText>fuel your growth.</GradientText></em>
                     </h1>
                     <p className="font-body text-lg text-text-secondary max-w-xl leading-relaxed">
-                        Pick a creative tier. We handle the rest — strategy, design, production,
-                        and AI — every month. No scope creep. No surprise invoices. Just output.
+                        Pick a creative tier. We handle the rest, from strategy and design to production,
+                        and AI, every month. No scope creep. No surprise invoices. Just output.
                     </p>
                 </motion.div>
             </section>
@@ -188,7 +188,7 @@ export default function PricingPage() {
                         Choose your creative bandwidth.
                     </h2>
                     <p className="font-body text-text-secondary mt-3 max-w-md mx-auto">
-                        Not sure which plan is right for you? Book a free audit — we&apos;ll recommend
+                        Not sure which plan is right for you? Book a free audit and we&apos;ll recommend
                         the exact tier for your brand&apos;s stage and goals.
                     </p>
                 </div>
@@ -237,7 +237,7 @@ export default function PricingPage() {
                             {
                                 num: "02",
                                 title: "Submit projects",
-                                desc: "Brief us on what you need — ads, videos, websites, strategy. We get to work within 48 hours.",
+                                desc: "Brief us on what you need: ads, videos, websites, strategy. We get to work within 48 hours.",
                             },
                             {
                                 num: "03",
