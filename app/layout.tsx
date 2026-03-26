@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://runoma.com.ng"),
-  title: "RUNOMA — AI-Powered Creative Tech Studio | Lagos, Nigeria",
+  title: "RUNOMA - AI-Powered Creative Tech Studio | Lagos, Nigeria",
   description:
     "Lagos's first fully AI-integrated creative tech studio. 32 services across branding, design, video, web, and AI automation. Enterprise results at African-market prices.",
   keywords: "AI creative agency Lagos, digital marketing Lagos, brand design Nigeria, AI advertising, RUNOMA",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "RUNOMA — Where AI Meets Human Creativity",
+    title: "RUNOMA - Where AI Meets Human Creativity",
     description: "AI-powered creative tech studio based in Lagos, Nigeria.",
     url: "https://runoma.com.ng",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RUNOMA — Where AI Meets Human Creativity",
+    title: "RUNOMA - Where AI Meets Human Creativity",
     description: "AI-powered creative tech studio based in Lagos, Nigeria.",
   },
 };
