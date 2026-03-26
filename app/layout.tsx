@@ -19,11 +19,20 @@ export const metadata: Metadata = {
     url: "https://runoma.com.ng",
     type: "website",
     siteName: "RUNOMA",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "RUNOMA - Where AI Meets Human Creativity",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "RUNOMA - Where AI Meets Human Creativity",
     description: "AI-powered creative tech studio based in Lagos, Nigeria.",
+    images: ["/og-image.png"],
   },
 };
 
