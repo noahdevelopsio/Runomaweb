@@ -41,14 +41,25 @@ export default function PortfolioPage() {
               className="group relative rounded-3xl overflow-hidden bg-gradient-card border border-sage/[0.08] 
                          hover:border-sage/20 transition-all duration-300 hover:shadow-card-hover"
             >
-              {/* Image */}
+              {/* Image / Video */}
               <div className="relative h-80 overflow-hidden">
-                <Image
-                  src={study.image}
-                  alt={study.title}
-                  fill
-                  className="object-cover"
-                />
+                {study.video ? (
+                  <video
+                    src={study.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={study.image}
+                    alt={study.title}
+                    fill
+                    className="object-cover"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
               </div>
 
