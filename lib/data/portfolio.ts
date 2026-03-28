@@ -12,6 +12,7 @@ export interface CaseStudy {
   challenge?: string;
   approach?: string;
   gallery?: string[];
+  video?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -61,5 +62,6 @@ export const caseStudies: CaseStudy[] = [
     image: "/placeholder-3.jpg",
     tags: ["Motion Design", "3D", "Video"],
     results: ["1M+ views", "Featured on industry blogs"],
+    video: "/portfolio/motion-graphics-hero.mp4",
   },
 ];

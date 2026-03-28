@@ -48,13 +48,24 @@ export default function CaseStudyPage({
         >
           <div className="relative h-[22rem] md:h-[28rem]">
               <>
-                <Image
-                  src={study.image}
-                  alt={study.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
+                {study.video ? (
+                  <video
+                    src={study.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={study.image}
+                    alt={study.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
               </>
           </div>
