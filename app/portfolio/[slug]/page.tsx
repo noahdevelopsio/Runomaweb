@@ -14,9 +14,11 @@ export default function CaseStudyPage({
   if (!study) notFound();
 
   const isOneTitaniumBranding = study.slug === "brand-identity-visual-design";
-  const oneTitaniumIntro = isOneTitaniumBranding
-    ? "One Titanium is a modern oilfield services company built on engineering excellence across Nigeria and Sub-Saharan Africa. Our goal was to translate that technical strength into a visual identity that feels confident, durable, and unmistakably premium on every touchpoint from brand systems to marketing collateral.\n\nWe collaborated closely with their team to align on positioning, refine the brand narrative, and design a cohesive identity that could scale across campaigns, presentations, and product experiences. The result is a clear visual language: consistent typography, structured layouts, and a system designed for real-world speed, ready for teams to deploy without friction."
-    : null;
+  const introText = study.intro
+    ? study.intro
+    : isOneTitaniumBranding
+      ? "One Titanium is a modern oilfield services company built on engineering excellence across Nigeria and Sub-Saharan Africa. Our goal was to translate that technical strength into a visual identity that feels confident, durable, and unmistakably premium on every touchpoint from brand systems to marketing collateral.\n\nWe collaborated closely with their team to align on positioning, refine the brand narrative, and design a cohesive identity that could scale across campaigns, presentations, and product experiences. The result is a clear visual language: consistent typography, structured layouts, and a system designed for real-world speed, ready for teams to deploy without friction."
+      : null;
 
   return (
     <div className="bg-surface-1 pt-32">
@@ -72,9 +74,9 @@ export default function CaseStudyPage({
         </section>
 
         {/* One Titanium: narrative intro (Uber-style) */}
-        {oneTitaniumIntro && (
+        {introText && (
           <section className="mb-12 px-2">
-            {oneTitaniumIntro.split("\n\n").map((para, i) => (
+            {introText.split("\n\n").map((para, i) => (
               <p key={i} className="font-body text-lg md:text-xl text-text-secondary leading-relaxed mb-4 last:mb-0">
                 {para}
               </p>
@@ -92,6 +94,25 @@ export default function CaseStudyPage({
                     alt={`${study.title} gallery ${i + 1}`}
                     fill
                     className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {study.galleryVideos && study.galleryVideos.length > 0 && (
+          <section className="mb-12">
+            <div className={`grid gap-4 ${study.galleryVideos.length === 1 ? "grid-cols-1" : "grid-cols-2"}`}>
+              {study.galleryVideos.map((vid, i) => (
+                <div key={i} className="relative h-64 md:h-96 rounded-2xl overflow-hidden border border-sage/[0.08]">
+                  <video
+                    src={vid}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
               ))}
