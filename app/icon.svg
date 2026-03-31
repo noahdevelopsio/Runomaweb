@@ -1,11 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Centered vertically (original was 72h, offset by (100-72)/2 = 14) -->
+  <style>
+    /* Default: Dark mode colors */
+    .top { fill: #7CB49A; }
+    .bottom { fill: #F0F4F8; }
+
+    /* Light mode override for browsers that support it */
+    @media (prefers-color-scheme: light) {
+      .bottom { fill: #0F1923; }
+    }
+  </style>
+
   <!-- Top Diamond (Sage) -->
-  <polygon points="50,19 70,39 50,59 30,39" fill="#7CB49A" />
+  <polygon class="top" points="50,19 70,39 50,59 30,39" />
   
-  <!-- Bottom Left Diamond (White) -->
-  <polygon points="28,41 48,61 28,81 8,61" fill="#F0F4F8" />
+  <!-- Bottom Left Diamond -->
+  <polygon class="bottom" points="28,41 48,61 28,81 8,61" />
   
-  <!-- Bottom Right Diamond (White) -->
-  <polygon points="72,41 92,61 72,81 52,61" fill="#F0F4F8" />
+  <!-- Bottom Right Diamond -->
+  <polygon class="bottom" points="72,41 92,61 72,81 52,61" />
 </svg>
