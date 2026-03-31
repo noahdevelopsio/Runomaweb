@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import ParallaxImage from "@/components/home/ParallaxImage";
 import Ticker from "@/components/home/Ticker";
 import StatsBar from "@/components/home/StatsBar";
 import Positioning from "@/components/home/Positioning";
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <ParallaxImage/>
       <Ticker />
       <StatsBar />
       <Positioning />
