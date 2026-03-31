@@ -53,7 +53,7 @@ export default function Hero() {
               className="w-2 h-2 rounded-full bg-primary"
             />
             <span className="font-mono text-xs tracking-[0.2em] text-primary uppercase">
-              AI-Powered Creative Studio · Lagos
+              AI Powered Creative Studio · Lagos
             </span>
           </motion.div>
 
@@ -72,7 +72,7 @@ export default function Hero() {
             variants={item}
             className="font-body text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed mb-12"
           >
-            AI-powered creative studio based in Lagos, Nigeria.
+            AI powered creative studio based in Lagos, Nigeria.
             <br />
             Serving the brands, creatives, and companies building Africa&apos;s future.
           </motion.p>

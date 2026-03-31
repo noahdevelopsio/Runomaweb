@@ -44,7 +44,7 @@ export default function CtaSection() {
           </motion.span>
 
           <h2 className="font-display text-4xl md:text-display-md font-light text-foreground mb-8 leading-[1.1]">
-            Ready to see what AI-powered
+            Ready to see what AI powered
             <br />
             <em>creativity looks like for your brand?</em>
           </h2>

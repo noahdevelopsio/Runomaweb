@@ -23,7 +23,7 @@ export default function Positioning() {
           <p className="font-body text-text-secondary text-lg leading-relaxed mb-6">
             Traditional agencies charge enterprise prices and move at enterprise speed.
             Freelancers are fast but inconsistent. RUNOMA sits in the gap, combining
-            AI-powered production velocity with senior creative direction.
+            AI powered production velocity with senior creative direction.
           </p>
           <p className="font-body text-text-secondary leading-relaxed">
             Every deliverable passes through human creative directors who understand
