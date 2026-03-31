@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Centered vertically (original was 72h, offset by (100-72)/2 = 14) -->
+  <!-- Top Diamond (Sage) -->
+  <polygon points="50,19 70,39 50,59 30,39" fill="#7CB49A" />
+  
+  <!-- Bottom Left Diamond (White) -->
+  <polygon points="28,41 48,61 28,81 8,61" fill="#F0F4F8" />
+  
+  <!-- Bottom Right Diamond (White) -->
+  <polygon points="72,41 92,61 72,81 52,61" fill="#F0F4F8" />
+</svg>

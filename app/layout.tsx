@@ -13,10 +13,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
-  },
   openGraph: {
     title: "RUNOMA - Where AI Meets Human Creativity",
     description: "AI powered creative tech studio based in Lagos, Nigeria.",
