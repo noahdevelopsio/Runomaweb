@@ -49,7 +49,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-body text-sm text-text-secondary leading-relaxed mb-3">
-              AI-Powered Creative Tech Studio
+              AI Powered Creative Tech Studio
               <br />
               Lagos, Nigeria
             </p>
