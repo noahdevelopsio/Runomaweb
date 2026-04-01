@@ -1,8 +1,23 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { caseStudies } from "@/lib/data/portfolio";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const study = caseStudies.find((s) => s.slug === params.slug);
+  if (!study) return {};
+
+  return {
+    title: `${study.title} | Case Study | RUNOMA`,
+    description: `See how RUNOMA delivered ${study.category} results for ${study.client}. AI powered creative excellence in the African market.`,
+  };
+}
 
 export default function CaseStudyPage({
   params,
