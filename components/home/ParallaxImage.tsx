@@ -40,7 +40,7 @@ function ParallaxImage() {
       />
 
       {/* Optional overlay for branding feel */}
-      <div className="absolute inset-0 bg-black/20" />
+      {/* <div className="absolute inset-0 bg-black/20" /> */}
 
       {/* Overlay text with independent motion */}
       <motion.div
