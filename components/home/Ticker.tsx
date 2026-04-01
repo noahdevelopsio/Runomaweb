@@ -13,7 +13,7 @@ export default function Ticker() {
       <div className="flex animate-ticker whitespace-nowrap">
         {content.map((item, i) => (
           <span key={i} className="inline-flex items-center gap-4 px-4">
-            <span className="font-mono text-sm  tracking-[0.12em] text-white uppercase">
+            <span className="font-mono text-sm tracking-[0.12em] text-white uppercase">
               {item}
             </span>
             <span className="text-sage text-xs">·</span>
