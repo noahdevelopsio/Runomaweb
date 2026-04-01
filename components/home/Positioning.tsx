@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
+import HomepageImage from "@/components/ui/HomepageImage";
 
 export default function Positioning() {
   return (
@@ -12,24 +13,31 @@ export default function Positioning() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl"
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
         >
-          <SectionEyebrow text="Why RUNOMA" />
-          <h2 className="font-display text-display-sm font-light text-text-primary mb-6">
-            Not an agency.
-            <br />
-            <em>A creative operating system.</em>
-          </h2>
-          <p className="font-body text-text-secondary text-lg leading-relaxed mb-6">
-            Traditional agencies charge enterprise prices and move at enterprise speed.
-            Freelancers are fast but inconsistent. RUNOMA sits in the gap, combining
-            AI powered production velocity with senior creative direction.
-          </p>
-          <p className="font-body text-text-secondary leading-relaxed">
-            Every deliverable passes through human creative directors who understand
-            Nigerian culture, African markets, and global design standards. The result:
-            world-class creative at prices that make sense for Lagos.
-          </p>
+          <div>
+            <SectionEyebrow text="Why RUNOMA" />
+            <h2 className="font-display text-display-sm font-light text-text-primary mb-6">
+              Not an agency.
+              <br />
+              <em>A creative operating system.</em>
+            </h2>
+            <p className="font-body text-text-secondary text-lg leading-relaxed mb-6">
+              We are a dynamic team of tech enthusiasts, developers, designers, and visionaries united by a common purpose: to shape the future of technology. 
+              Our diverse backgrounds and expertise enable us to approach challenges from different perspectives, finding unique solutions that set new industry standards.
+            </p>
+            <p className="font-body text-text-secondary leading-relaxed">
+             We stay ahead of the curve by embracing the latest technologies and industry trends. 
+             This allows us to offer innovative solutions that bring value and efficiency to our customers.
+            </p>
+          </div>
+          <HomepageImage
+            src="/acad_1.png"
+            alt="Creative professionals collaborating in a modern workspace, representing RUNOMA's innovative approach"
+            width={800}
+            height={1000}
+            className="w-full object-cover"
+          />
         </motion.div>
       </div>
     </section>

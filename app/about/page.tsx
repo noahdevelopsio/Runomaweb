@@ -13,9 +13,9 @@ export default function AboutPage() {
       <section className="max-w-6xl mx-auto px-8 pb-24">
         <SectionEyebrow text="About RUNOMA" />
         <h1 className="font-display text-5xl md:text-display-lg font-light text-text-primary mb-6">
-          Built in Lagos.
+          We are an innovative,
           <br />
-          <em className="text-sage">Built for Africa.</em>
+          <em className="text-sage">top-notch brand.</em>
         </h1>
         <p className="font-body text-lg text-text-secondary max-w-xl leading-relaxed">
           RUNOMA was born from a simple observation: Nigerian businesses deserve
