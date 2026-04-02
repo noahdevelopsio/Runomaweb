@@ -1,25 +1,65 @@
-export default function Ticker() {
-  const items = [
-    "BRANDING", "AI AD GENERATION", "VIDEO PRODUCTION", "MOTION DESIGN",
-    "WEB DESIGN", "3D RENDERS", "SEO & AEO", "PITCH DECKS",
-    "COPYWRITING", "DESIGN SYSTEMS", "AI CONSULTING", "PACKAGING",
-    "SOCIAL CREATIVE", "AR EXPERIENCES", "FRACTIONAL CMO",
-  ];
+"use client";
 
-  const content = [...items, ...items]; // duplicate for seamless loop
+import { motion } from "framer-motion";
+
+const items = [
+  "BRANDING",
+  "AI AD GENERATION",
+  "VIDEO PRODUCTION",
+  "MOTION DESIGN",
+  "WEB DESIGN",
+  "3D RENDERS",
+  "SEO & AEO",
+  "PITCH DECKS",
+  "COPYWRITING",
+  "DESIGN SYSTEMS",
+  "AI CONSULTING",
+  "PACKAGING",
+  "SOCIAL CREATIVE",
+  "AR EXPERIENCES",
+  "FRACTIONAL CMO",
+];
+
+export default function Ticker() {
+  const doubled = [...items, ...items];
 
   return (
-    <div className="overflow-hidden border-y border-sage/10 py-3 bg-surface-2/50">
-      <div className="flex animate-ticker whitespace-nowrap">
-        {content.map((item, i) => (
-          <span key={i} className="inline-flex items-center gap-4 px-4">
-            <span className="font-mono text-sm font-bold tracking-[0.12em] text-white uppercase">
+    <section className="relative py-6 bg-surface-0 overflow-hidden">
+      {/* Subtle top/bottom borders */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+
+      <div className="relative overflow-hidden py-2">
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-surface-0 to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-surface-0 to-transparent pointer-events-none" />
+
+        <motion.div
+          className="flex gap-3 whitespace-nowrap"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+        >
+          {doubled.map((item, i) => (
+            <motion.span
+              key={`${item}-${i}`}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full
+                border border-primary/15 bg-primary/[0.04]
+                backdrop-blur-md
+                font-mono text-xs tracking-[0.14em] uppercase
+                text-text-secondary
+                hover:border-primary/40 hover:bg-primary/[0.1] hover:text-primary
+                hover:shadow-[0_0_20px_rgba(124,180,154,0.12)]
+                transition-all duration-300 cursor-default
+                select-none shrink-0"
+              whileHover={{ scale: 1.06, y: -2 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
               {item}
-            </span>
-            <span className="text-sage text-xs">·</span>
-          </span>
-        ))}
+            </motion.span>
+          ))}
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
