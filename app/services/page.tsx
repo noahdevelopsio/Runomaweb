@@ -17,10 +17,10 @@ export default function ServicesPage() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <SectionEyebrow text="Services" />
-          <h1 className="font-display text-5xl md:text-display-lg font-light text-text-primary mb-5">
-            Everything your brand
+          <h1 className="font-display text-4xl md:text-display-sm font-light text-text-primary mb-5">
+            We create more than just products,
             <br />
-            <em>needs to grow.</em>
+            <em>we actualise your Dreams.</em>
           </h1>
           <p className="font-body text-lg text-text-secondary max-w-xl">
             32 services across 6 pillars. AI-enhanced by default.
