@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import DynamicIslandNav from "@/components/layout/DynamicIslandNav";
 import Footer from "@/components/layout/Footer";
+import NewsletterPopup from "@/components/ui/NewsletterPopup";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://runoma.com.ng"),
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <DynamicIslandNav />
         <main>{children}</main>
         <Footer />
+        <NewsletterPopup />
       </body>
     </html>
   );
