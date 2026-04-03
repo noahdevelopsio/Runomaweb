@@ -88,7 +88,7 @@ export const caseStudies: CaseStudy[] = [
     gallery: [
       "/portfolio/graphic-design-1.jpg",
       "/portfolio/graphic-design-2.jpg",
-      "/portfolio/graphic-design-3.jpg",
+      "/portfolio/motion-graphics-gallery-2.mp4",
       "/portfolio/graphic-design-4.jpg",
       "/portfolio/graphic-design-5.jpg",
       "/portfolio/graphic-design-6.jpg",

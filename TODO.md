@@ -1,15 +1,9 @@
-# ParallaxImage Fix Task
-Status: In Progress
+# Fix Portfolio Video Display - Mixed Media Gallery Handler
 
-## Steps:
-1. [ ] Create TODO.md with plan breakdown (done)
-2. [x] Edit ParallaxImage.tsx:
-   - Update section height for better responsiveness
-   - Tweak image styles and parallax transforms for better fit/placement
-   - Improve text overlay responsiveness
-3. [x] Test in browser (manual: npm run dev, scroll to section)
-4. [x] Update TODO.md with completion
-5. [ ] Attempt completion
-
-All steps complete. ParallaxImage.tsx fixed for better section fit and image placement.
+## Plan Steps:
+- [x] 1. Create TODO.md with steps
+- [x] 2. Update app/portfolio/[slug]/page.tsx to render gallery items as image or video based on extension
+- [ ] 3. Test http://localhost:3000/portfolio/graphic-design-showcase 
+- [ ] 4. Confirm video displays correctly in gallery grid
+- [ ] 5. Complete task
 
