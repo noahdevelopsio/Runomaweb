@@ -3,6 +3,7 @@ import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
 import AnimatedText from "@/components/ui/AnimatedText";
 import AboutClient from "./AboutClient";
+import ParallaxStory from "@/components/home/ParallaxStory";
 
 export const metadata: Metadata = {
   title: "About RUNOMA | Our Mission & AI Powered Creative Philosophy",
@@ -27,6 +28,9 @@ export default function AboutPage() {
           AI makes that possible. We built the studio to prove it.
         </p>
       </section>
+
+      {/* Parallax Story - moved from homepage */}
+      <ParallaxStory />
 
       <AboutClient />
 
