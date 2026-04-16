@@ -97,7 +97,7 @@ export default function AboutPage() {
                 { stat: "₦1.4B", label: "Nigeria's projected AI market size" },
                 { stat: "83%",   label: "Lagos marketers using AI without guidance" },
                 { stat: "40M+",  label: "Nigerians on Instagram and TikTok" },
-                { stat: "0",     label: "Lagos agencies offering AEO or design systems" },
+                { stat: "0",     label: "Lagos agencies offering Answer Engine Optimization (AEO) or design systems" },
               ].map((item) => (
                 <div
                   key={item.stat}
