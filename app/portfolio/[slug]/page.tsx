@@ -1,8 +1,23 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { caseStudies } from "@/lib/data/portfolio";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const study = caseStudies.find((s) => s.slug === params.slug);
+  if (!study) return {};
+
+  return {
+    title: `${study.title} | Case Study | RUNOMA`,
+    description: `See how RUNOMA delivered ${study.category} results for ${study.client}. AI powered creative excellence in the African market.`,
+  };
+}
 
 export default function CaseStudyPage({
   params,
@@ -44,35 +59,32 @@ export default function CaseStudyPage({
           </div>
         </section>
 
-        {/* Hero image / video */}
+        {/* Hero image */}
         <section
           className="relative rounded-3xl overflow-hidden border border-sage/[0.08] mb-12 bg-gradient-card"
         >
           <div className="relative h-[22rem] md:h-[28rem]">
-            {study.video ? (
               <>
-                <video
-                  src={study.video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+                {study.video ? (
+                  <video
+                    src={study.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={study.image}
+                    alt={study.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
               </>
-            ) : (
-              <>
-                <Image
-                  src={study.image}
-                  alt={study.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
-              </>
-            )}
           </div>
         </section>
 
@@ -87,33 +99,19 @@ export default function CaseStudyPage({
           </section>
         )}
 
-{study.gallery && study.gallery.length > 0 && (
+        {study.gallery && study.gallery.length > 0 && (
           <section className="mb-12">
             <div className="grid grid-cols-2 gap-4">
-              {study.gallery.map((media, i) => {
-                const isVideo = media.toLowerCase().match(/\.(mp4|mov|avi|webm)$/i);
-                return (
-                  <div key={i} className="relative h-64 md:h-80 rounded-2xl overflow-hidden border border-sage/[0.08]">
-                    {isVideo ? (
-                      <video
-                        src={media}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                    ) : (
-                      <Image
-                        src={media}
-                        alt={`${study.title} gallery ${i + 1}`}
-                        fill
-                        className="object-cover"
-                      />
-                    )}
-                  </div>
-                );
-              })}
+              {study.gallery.map((img, i) => (
+                <div key={i} className="relative h-64 md:h-80 rounded-2xl overflow-hidden border border-sage/[0.08]">
+                  <Image
+                    src={img}
+                    alt={`${study.title} gallery ${i + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ))}
             </div>
           </section>
         )}
