@@ -1,21 +1,26 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { Metadata } from "next";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
 import AnimatedText from "@/components/ui/AnimatedText";
+import AboutClient from "./AboutClient";
+import ParallaxStory from "@/components/home/ParallaxStory";
+
+export const metadata: Metadata = {
+  title: "About RUNOMA | Our Mission & AI Powered Creative Philosophy",
+  description:
+    "Discover why RUNOMA was built in Lagos for Africa. Learn about our mission to close the creative gap using AI powered production and senior creative direction.",
+};
 
 export default function AboutPage() {
   return (
     <div className="bg-surface-1 pt-32">
-
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-8 pb-24">
         <SectionEyebrow text="About RUNOMA" />
         <h1 className="font-display text-5xl md:text-display-lg font-light text-text-primary mb-6">
-          We are an innovative,
+          Built in Lagos.
           <br />
-          <em className="text-sage">top-notch brand.</em>
+          <em className="text-sage">Built for Africa.</em>
         </h1>
         <p className="font-body text-lg text-text-secondary max-w-xl leading-relaxed">
           RUNOMA was born from a simple observation: Nigerian businesses deserve
@@ -24,50 +29,11 @@ export default function AboutPage() {
         </p>
       </section>
 
-      {/* Mission */}
-      <section className="bg-surface-2 py-24">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <SectionEyebrow text="Our Mission" />
-              <h2 className="font-display text-display-sm font-light text-text-primary mb-6">
-                We exist to close
-                <br />
-                <em>the creative gap.</em>
-              </h2>
-              <p className="font-body text-text-secondary leading-relaxed">
-                For too long, Nigerian brands have had to choose between expensive
-                international agencies that don&apos;t understand the culture, or local
-                agencies that can&apos;t deliver the quality. RUNOMA is neither.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-surface-3 rounded-3xl p-8 border border-sage/10"
-            >
-              {[
-                { stat: "₦1.4B", label: "Nigeria's projected AI market size" },
-                { stat: "83%", label: "Lagos marketers using AI without guidance" },
-                { stat: "40M+", label: "Nigerians on Instagram and TikTok" },
-                { stat: "0", label: "Lagos agencies offering AEO or design systems" },
-              ].map((item) => (
-                <div key={item.stat} className="flex items-baseline gap-4 py-3 border-b border-sage/10 last:border-0">
-                  <span className="font-mono text-2xl text-sage w-20 shrink-0">{item.stat}</span>
-                  <span className="font-body text-sm text-text-secondary">{item.label}</span>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* Parallax Story — Chapter 01 / 02 / 03 */}
+      <ParallaxStory />
+
+      {/* Mission + Stats */}
+      <AboutClient />
 
       {/* Philosophy */}
       <section className="py-24">
@@ -80,7 +46,7 @@ export default function AboutPage() {
           </h2>
           <p className="font-body text-text-secondary text-lg leading-relaxed">
             Every RUNOMA deliverable begins with human thinking: What does this brand stand for?
-            Who is the audience? What emotion should this trigger? Then AI amplifies the execution.
+            Who is the audience? What emotion should this trigger? Then AI amplifies the execution,
             generating options at speed, testing variants, and optimizing in real time.
             <br /><br />
             The creative insight is human. The production velocity is AI.

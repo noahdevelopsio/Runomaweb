@@ -1,8 +1,23 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { caseStudies } from "@/lib/data/portfolio";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const study = caseStudies.find((s) => s.slug === params.slug);
+  if (!study) return {};
+
+  return {
+    title: `${study.title} | Case Study | RUNOMA`,
+    description: `See how RUNOMA delivered ${study.category} results for ${study.client}. AI powered creative excellence in the African market.`,
+  };
+}
 
 export default function CaseStudyPage({
   params,
@@ -49,15 +64,27 @@ export default function CaseStudyPage({
           className="relative rounded-3xl overflow-hidden border border-sage/[0.08] mb-12 bg-gradient-card"
         >
           <div className="relative h-[22rem] md:h-[28rem]">
-              <Image
-                src={study.image}
-                alt={study.title}
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
-
+              <>
+                {study.video ? (
+                  <video
+                    src={study.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={study.image}
+                    alt={study.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
+              </>
           </div>
         </section>
 
