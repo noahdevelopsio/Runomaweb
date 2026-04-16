@@ -45,6 +45,7 @@ export const caseStudies: CaseStudy[] = [
     category: "Branding & Marketing",
     description: "One Titanium is a modern oilfield services company delivering innovative engineering solutions, integrated oilfield services, and high-performance infrastructure support across Nigeria and Sub-Saharan Africa.",
     image: "/portfolio/one-titanium-hero.jpeg",
+    video: "/portfolio/one-titanium-hero.mp4",
     tags: ["Logo design", "Visual Design", "Brand Strategy"],
     results: ["150% ROI", "+25% Visibility", "40% cost reduction"],
     gallery: [

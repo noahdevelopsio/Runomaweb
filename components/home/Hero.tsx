@@ -38,7 +38,7 @@ export default function Hero() {
       </Suspense>
 
       {/* Blended background image — right side */}
-      <div
+      {/* <div
         className="absolute inset-y-0 right-0 w-1/2 pointer-events-none overflow-hidden hidden md:block"
         style={{
           maskImage: "linear-gradient(to right, transparent 0%, black 40%)",
@@ -52,7 +52,7 @@ export default function Hero() {
           className="object-cover opacity-20 mix-blend-luminosity"
           priority
         />
-      </div>
+      </div> */}
 
       {/* Grain overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
