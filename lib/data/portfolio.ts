@@ -45,7 +45,6 @@ export const caseStudies: CaseStudy[] = [
     category: "Branding & Marketing",
     description: "One Titanium is a modern oilfield services company delivering innovative engineering solutions, integrated oilfield services, and high-performance infrastructure support across Nigeria and Sub-Saharan Africa.",
     image: "/portfolio/one-titanium-hero.jpeg",
-    video: "/portfolio/one-titanium-hero.mp4",
     tags: ["Logo design", "Visual Design", "Brand Strategy"],
     results: ["150% ROI", "+25% Visibility", "40% cost reduction"],
     gallery: [
@@ -71,28 +70,6 @@ export const caseStudies: CaseStudy[] = [
     intro: "This project pushed the boundaries of what brand video can achieve. We combined hand-crafted motion graphics with 3D rendering and cinematic editing to produce a series that doesn't just inform — it moves people.\n\nFrom concept to final delivery, every frame was designed with intention. The result is a video series that performs across social, web, and presentation contexts — built for impact at every touchpoint.",
     galleryVideos: [
       "/portfolio/motion-graphics-gallery-1.mp4",
-    ],
-  },
-  {
-    id: 4,
-    slug: "graphic-design-showcase",
-    title: "Graphic Design",
-    client: "Various Clients",
-    category: "Graphic Design",
-    description: "A curated showcase of graphic design work spanning brand collateral, social media creatives, print materials, packaging, and digital illustrations — crafted for clients across industries.",
-    image: "/portfolio/graphic-design-hero.jpg",
-    tags: ["Graphic Design", "Print", "Social Media", "Illustration", "Packaging"],
-    results: ["50+ deliverables produced", "Consistent brand systems", "Cross-platform design assets", "Client satisfaction across industries"],
-    challenge: "Deliver visually cohesive, high-impact design work across wildly different briefs — from luxury packaging to bold social media campaigns — while maintaining a signature creative standard.",
-    approach: "Each project started with a deep dive into the client's brand DNA. We built flexible design systems that could scale from a single Instagram post to a full print campaign, ensuring every piece felt intentional and on-brand.",
-    intro: "Great graphic design isn't just about looking good — it's about communicating clearly and leaving a lasting impression. This collection represents the breadth of our design capabilities, from minimalist brand collateral to vibrant social campaigns.\n\nEvery piece was designed with purpose, balancing aesthetics with function to deliver work that performs as well as it looks.",
-    gallery: [
-      "/portfolio/graphic-design-1.jpg",
-      "/portfolio/graphic-design-2.jpg",
-      "/portfolio/motion-graphics-gallery-2.mp4",
-      "/portfolio/graphic-design-4.jpg",
-      "/portfolio/graphic-design-5.jpg",
-      "/portfolio/graphic-design-6.jpg",
     ],
   },
 ];
