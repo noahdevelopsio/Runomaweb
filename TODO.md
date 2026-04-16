@@ -1,8 +1,8 @@
-# Task: Change hero section in app/portfolio/[slug]/page.tsx to show only image (no video)
+# Fix ESLint Error in Hero.tsx
 
-## TODO Steps:
-1. [x] Edit app/portfolio/[slug]/page.tsx: Replace the conditional video/image logic in hero section with unconditional Image component.
-2. [ ] Test the change on portfolio detail pages.
-3. [ ] Mark complete and cleanup TODO.md.
+## Steps:
+- [x] Step 1: Edit components/home/Hero.tsx to remove unused Image import
+- [x] Step 2: Verify linting fix by running eslint (no errors)
+- [x] Step 3: Mark complete
 
-Progress: Step 1 complete. Ready for testing.
+✅ Task completed.

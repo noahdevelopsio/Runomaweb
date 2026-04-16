@@ -1,7 +1,6 @@
 "use client";
 
 import { Suspense } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Scene3D from "./Scene3D";
