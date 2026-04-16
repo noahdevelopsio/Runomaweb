@@ -16,10 +16,10 @@ export default function ServicesPage() {
       <section className="max-w-6xl mx-auto px-8 pb-20">
         <div>
           <SectionEyebrow text="Services" />
-          <h1 className="font-display text-4xl md:text-display-sm font-light text-text-primary mb-5">
-            We create more than just products,
+          <h1 className="font-display text-5xl md:text-display-lg font-light text-text-primary mb-5">
+            Everything your brand
             <br />
-            <em>we actualise your Dreams.</em>
+            <em>needs to grow.</em>
           </h1>
           <p className="font-body text-lg text-text-secondary max-w-xl">
             32 services across 6 pillars. AI enhanced by default.

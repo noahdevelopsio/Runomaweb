@@ -36,23 +36,6 @@ export default function Hero() {
         <Scene3D />
       </Suspense>
 
-      {/* Blended background image — right side */}
-      {/* <div
-        className="absolute inset-y-0 right-0 w-1/2 pointer-events-none overflow-hidden hidden md:block"
-        style={{
-          maskImage: "linear-gradient(to right, transparent 0%, black 40%)",
-          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%)",
-        }}
-      >
-        <Image
-          src="/image0.png"
-          alt=""
-          fill
-          className="object-cover opacity-20 mix-blend-luminosity"
-          priority
-        />
-      </div> */}
-
       {/* Grain overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
@@ -89,7 +72,9 @@ export default function Hero() {
             variants={item}
             className="font-body text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed mb-12"
           >
-            At Runoma we transform your boldest visions into reality, leveraging on our ever-pioneering capabilities. Enjoy a world of limitless possibilities, innovative and awesome inventions.
+            AI powered creative studio based in Lagos, Nigeria.
+            <br />
+            Serving the brands, creatives, and companies building Africa&apos;s future.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap gap-4 mb-20">
@@ -105,6 +90,27 @@ export default function Hero() {
             <Button href="/services" variant="ghost" size="lg">
               Explore Services
             </Button>
+          </motion.div>
+
+          <motion.div
+            variants={item}
+            className="flex flex-wrap gap-12 border-t border-primary/10 pt-8"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="flex items-center gap-3 px-4 py-2 rounded-full border border-primary/20 bg-primary/5"
+            >
+              <motion.span
+                animate={{ opacity: [1, 0.4, 1] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                className="w-2 h-2 rounded-full bg-primary"
+              />
+              <span className="font-mono text-xs tracking-wider text-text-secondary uppercase">
+                Currently accepting new clients
+              </span>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
