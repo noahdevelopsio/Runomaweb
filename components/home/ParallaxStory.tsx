@@ -211,7 +211,7 @@ function ChapterBlock({
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/portfolio/parallax.JPG"
+            src="/portfolio/parallax.jpg"
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover opacity-[0.04]"
