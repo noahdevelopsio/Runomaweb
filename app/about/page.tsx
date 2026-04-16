@@ -29,9 +29,10 @@ export default function AboutPage() {
         </p>
       </section>
 
-      {/* Parallax Story - moved from homepage */}
+      {/* Parallax Story — Chapter 01 / 02 / 03 */}
       <ParallaxStory />
 
+      {/* Mission + Stats */}
       <AboutClient />
 
       {/* Philosophy */}

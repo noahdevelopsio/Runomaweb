@@ -3,6 +3,13 @@
 import { motion } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 
+const stats = [
+  { stat: "₦1.4B", label: "Nigeria's projected AI market size" },
+  { stat: "83%", label: "Lagos marketers using AI without guidance" },
+  { stat: "40M+", label: "Nigerians on Instagram and TikTok" },
+  { stat: "0", label: "Lagos agencies offering AEO or design systems" },
+];
+
 export default function AboutClient() {
   return (
     <section className="bg-surface-2 py-24">
@@ -26,6 +33,7 @@ export default function AboutClient() {
               agencies that can&apos;t deliver the quality. RUNOMA is neither.
             </p>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -33,15 +41,17 @@ export default function AboutClient() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="bg-surface-3 rounded-3xl p-8 border border-sage/10"
           >
-            {[
-              { stat: "₦1.4B", label: "Nigeria's projected AI market size" },
-              { stat: "83%", label: "Lagos marketers using AI without guidance" },
-              { stat: "40M+", label: "Nigerians on Instagram and TikTok" },
-              { stat: "0", label: "Lagos agencies offering AEO or design systems" },
-            ].map((item) => (
-              <div key={item.stat} className="flex items-baseline gap-4 py-3 border-b border-sage/10 last:border-0">
-                <span className="font-mono text-2xl text-sage w-20 shrink-0">{item.stat}</span>
-                <span className="font-body text-sm text-text-secondary">{item.label}</span>
+            {stats.map((item) => (
+              <div
+                key={item.stat}
+                className="flex items-baseline gap-4 py-3 border-b border-sage/10 last:border-0"
+              >
+                <span className="font-mono text-2xl text-sage w-20 shrink-0">
+                  {item.stat}
+                </span>
+                <span className="font-body text-sm text-text-secondary">
+                  {item.label}
+                </span>
               </div>
             ))}
           </motion.div>

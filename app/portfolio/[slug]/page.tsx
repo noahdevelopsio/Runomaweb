@@ -99,19 +99,33 @@ export default function CaseStudyPage({
           </section>
         )}
 
-        {study.gallery && study.gallery.length > 0 && (
+{study.gallery && study.gallery.length > 0 && (
           <section className="mb-12">
             <div className="grid grid-cols-2 gap-4">
-              {study.gallery.map((img, i) => (
-                <div key={i} className="relative h-64 md:h-80 rounded-2xl overflow-hidden border border-sage/[0.08]">
-                  <Image
-                    src={img}
-                    alt={`${study.title} gallery ${i + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
+              {study.gallery.map((media, i) => {
+                const isVideo = media.toLowerCase().match(/\.(mp4|mov|avi|webm)$/i);
+                return (
+                  <div key={i} className="relative h-64 md:h-80 rounded-2xl overflow-hidden border border-sage/[0.08]">
+                    {isVideo ? (
+                      <video
+                        src={media}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    ) : (
+                      <Image
+                        src={media}
+                        alt={`${study.title} gallery ${i + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </section>
         )}

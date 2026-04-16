@@ -1,25 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SectionEyebrow from "@/components/ui/SectionEyebrow";
+import { Compass, Hammer, Puzzle } from "lucide-react";
 
 const steps = [
   {
-    num: "01",
-    title: "Brief",
-    desc: "You tell us your goals, audience, and timeline. We listen, ask sharp questions, and build shared understanding before a single pixel is touched.",
+    icon: Compass,
+    title: "Discover",
+    desc: "We dive deep into your brand, audience, and market landscape. Through research and strategic insight, we uncover the ideas and opportunities that will set you apart.",
     accent: "from-primary/20 to-primary/5",
   },
   {
-    num: "02",
+    icon: Hammer,
     title: "Build",
-    desc: "Our AI-enhanced workflows generate, iterate, and refine faster than any traditional agency. Human creative directors shape every output.",
+    desc: "Our AI-enhanced workflows design, iterate, and refine at speed. Every deliverable is shaped by senior creative directors who understand African markets and global standards.",
     accent: "from-secondary/20 to-secondary/5",
   },
   {
-    num: "03",
-    title: "Launch",
-    desc: "You receive final assets, campaign files, and a performance dashboard. Most projects delivered in 48–72 hours.",
+    icon: Puzzle,
+    title: "Integrate",
+    desc: "We deliver production-ready assets and ensure seamless integration into your existing platforms, campaigns, and workflows — so everything just works.",
     accent: "from-primary-dark/20 to-primary-dark/5",
   },
 ];
@@ -48,7 +48,6 @@ export default function HowItWorks() {
 
       <div className="max-w-6xl mx-auto px-8 relative z-10">
         <div className="text-center mb-20">
-          <SectionEyebrow text="The Process" />
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -56,56 +55,40 @@ export default function HowItWorks() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="font-display text-4xl md:text-display-md font-light text-foreground"
           >
-            Three steps to
-            <br />
-            <em className="text-primary">remarkable.</em>
+            The RUNOMA{" "}
+            <em className="text-primary">Code</em>
           </motion.h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 relative">
-          {/* Connector */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-            className="hidden md:block absolute top-[72px] left-[72px] w-2/3 h-px
-                       bg-gradient-to-r from-primary/10 via-primary/30 to-primary/10 origin-left"
-          />
-
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.num}
-              initial={{ opacity: 0, y: 50, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-              className="relative p-8 md:p-10"
-            >
-              {/* Step circle */}
+          {steps.map((step, i) => {
+            const Icon = step.icon;
+            return (
               <motion.div
-                whileHover={{ scale: 1.1 }}
-                className={`w-16 h-16 rounded-full flex items-center justify-center mb-8
-                           border border-primary/20 bg-gradient-to-br ${step.accent}
-                           backdrop-blur-sm relative`}
+                key={step.title}
+                initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+                className="relative p-8 md:p-10"
               >
-                <span className="font-mono text-sm text-primary font-medium">{step.num}</span>
-                {/* Pulse ring */}
-                <motion.div
-                  className="absolute inset-0 rounded-full border border-primary/20"
-                  animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
-                  transition={{ repeat: Infinity, duration: 2, delay: i * 0.5 }}
-                />
+                <div className="flex items-center gap-3 mb-6">
+                  <div
+                    className={`w-10 h-10 rounded-lg flex items-center justify-center
+                               border border-primary/20 bg-gradient-to-br ${step.accent}`}
+                  >
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-display text-2xl font-light text-foreground">
+                    <em className="text-primary">{step.title}</em>
+                  </h3>
+                </div>
+                <p className="font-body text-base text-text-secondary leading-relaxed">
+                  {step.desc}
+                </p>
               </motion.div>
-
-              <h3 className="font-display text-3xl font-light text-foreground mb-4">
-                {step.title}
-              </h3>
-              <p className="font-body text-sm text-text-secondary leading-relaxed">
-                {step.desc}
-              </p>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

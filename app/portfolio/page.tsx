@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
-import Button from "@/components/ui/Button";
 import PortfolioClient from "./PortfolioClient";
 
 export const metadata: Metadata = {
@@ -28,26 +27,6 @@ export default function PortfolioPage() {
       </section>
 
       <PortfolioClient />
-
-      {/* CTA Section */}
-      <section className="bg-surface-2 py-24">
-        <div className="max-w-4xl mx-auto px-8 text-center">
-          <div>
-            <SectionEyebrow text="Ready to Start?" />
-            <h2 className="font-display text-4xl md:text-5xl font-light text-text-primary mb-6">
-              Let&apos;s build something
-              <br />
-              <em className="text-sage">remarkable together.</em>
-            </h2>
-            <p className="font-body text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-              Book a free audit to see how we can help your brand stand out in the African market.
-            </p>
-            <Button href="/contact" size="lg">
-              Book Free Audit →
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
