@@ -44,20 +44,35 @@ export default function CaseStudyPage({
           </div>
         </section>
 
-        {/* Hero image */}
+        {/* Hero image / video */}
         <section
           className="relative rounded-3xl overflow-hidden border border-sage/[0.08] mb-12 bg-gradient-card"
         >
           <div className="relative h-[22rem] md:h-[28rem]">
-              <Image
-                src={study.image}
-                alt={study.title}
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
-
+            {study.video ? (
+              <>
+                <video
+                  src={study.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
+              </>
+            ) : (
+              <>
+                <Image
+                  src={study.image}
+                  alt={study.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-sage/10 to-transparent" />
+              </>
+            )}
           </div>
         </section>
 
