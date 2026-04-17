@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { motion } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import Button from "@/components/ui/Button";
 import PortfolioClient from "./PortfolioClient";
@@ -14,7 +15,11 @@ export default function PortfolioPage() {
     <div className="bg-surface-1 pt-32">
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-8 pb-20">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
           <SectionEyebrow text="Portfolio" />
           <h1 className="font-display text-5xl md:text-display-lg font-light text-text-primary mb-5">
             Work that moves
@@ -24,7 +29,7 @@ export default function PortfolioPage() {
           <p className="font-body text-lg text-text-secondary max-w-xl">
             Case studies showcasing how we help African businesses build brands that stand out.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       <PortfolioClient />
@@ -32,7 +37,12 @@ export default function PortfolioPage() {
       {/* CTA Section */}
       <section className="bg-surface-2 py-24">
         <div className="max-w-4xl mx-auto px-8 text-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
             <SectionEyebrow text="Ready to Start?" />
             <h2 className="font-display text-4xl md:text-5xl font-light text-text-primary mb-6">
               Let&apos;s build something
@@ -45,7 +55,7 @@ export default function PortfolioPage() {
             <Button href="/contact" size="lg">
               Book Free Audit →
             </Button>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
