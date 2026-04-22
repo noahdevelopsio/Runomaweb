@@ -208,7 +208,7 @@ export default function CaseStudyPage({
                 Want work like this?
               </h2>
               <p className="font-body text-sm text-text-secondary leading-relaxed mb-6">
-                Book a free audit and we&apos;ll tell you what we&apos;d do first to help
+                Book a free audit and we'll tell you what we'd do first to help
                 your brand stand out.
               </p>
               <Button href="/contact" size="lg" fullWidth>

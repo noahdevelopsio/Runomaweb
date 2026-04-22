@@ -14,6 +14,7 @@ export default function MagneticCursor() {
     const ringRef = useRef<HTMLDivElement>(null);
 
     const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([]);
+
     const trailId = useRef(0);
 
     useEffect(() => {
@@ -81,3 +82,4 @@ export default function MagneticCursor() {
         </>
     );
 }
+

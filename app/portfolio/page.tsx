@@ -133,7 +133,7 @@ export default function PortfolioPage() {
           >
             <SectionEyebrow text="Ready to Start?" />
             <h2 className="font-display text-4xl md:text-5xl font-light text-text-primary mb-6">
-              Let&apos;s build something
+              Let's build something
               <br />
               <em className="text-sage">remarkable together.</em>
             </h2>
@@ -149,3 +149,4 @@ export default function PortfolioPage() {
     </div>
   );
 }
+
