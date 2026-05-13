@@ -127,7 +127,8 @@ export const pillars: Pillar[] = [
       {
         services: [
           "Website design and development — Webflow, WordPress, Framer, Next.js",
-          "Mobile app UI/UX design and interactive prototyping",
+          "Mobile app development - IOS, Andriod",
+          "UI/UX design and interactive prototyping",
           "E-commerce store setup and optimization — Shopify, WooCommerce",
           "Landing page design for product launches and campaigns",
           "Design systems — component libraries and reusable UI frameworks",
